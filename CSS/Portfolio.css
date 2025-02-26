@@ -185,7 +185,8 @@ nav a:hover {
 }
 
 .flip-container p{
-    font-size: 2vw;
+    font-size: 1.5vw;
+    margin: 10%;
 }
 
 .flip-container {
