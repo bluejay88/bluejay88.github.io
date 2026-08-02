@@ -1,0 +1,63 @@
+body{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logo Text Animation */
+#logo svg text {
+    font-family: 'Alice', serif;
+    background-color: rgba(0, 0, 0, 0.014);
+    letter-spacing: 10px;
+    stroke: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+    stroke-width: 2;
+    animation: textAnimate 8s infinite alternate;
+}
+
+@keyframes textAnimate {
+    0% {
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 20%;
+        fill: hsl(0, 0%, 100%);
+    }
+
+    100% {
+        stroke-dasharray: 50% 0;
+        stroke-dashoffset: -20%;
+        fill: hsla(0, 0%, 100%, 1%);
+    }
+}
+
+.member{
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    flex-basis: 33%;
+}
+
+.img-side{
+    border-right: solid white 2px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 33%;
+}
+
+.txt-side{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 67%;
+    margin-left: 10px;
+}
+
+img{
+    width: 30vw; /* Adjust to your desired width */
+    height: 30vw; /* Adjust to your desired height */
+    margin: 20px; /* Adjust as needed */
+    border-radius: 50%; /* Circular container */
+    overflow: auto; /* Ensures content does not overflow the circular border */
+    position: relative; /* Ensure child elements are positioned relative to this container */
+}

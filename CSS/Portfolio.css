@@ -1,0 +1,446 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 100px;
+}
+
+div{
+    display: flex;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row-reverse;
+    list-style: none;
+    gap: 15px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.horizontal-scroll {
+    position: relative;
+    height: 100vh;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    background: #000;
+ /*   margin-top: 10px;*/
+}
+
+.scroll-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 500vw;
+    height: 100%;
+}
+
+.scroll-section {
+    flex: 0 0 100vw;
+    height: 100vh;
+    position: relative;
+    scroll-snap-align: start;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.right-con {
+    position: absolute;
+    bottom: 20px;
+    right:5px;
+    width: 40px;
+    height: 40px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.left-con {
+    position: absolute;
+    bottom: 20px;
+    left:5px;
+    width: 40px;
+    height: 40px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: start;
+    justify-content: end;
+    z-index: 10;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.round {
+    position: absolute;
+    border: 2px solid #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+}
+
+#cta {
+    width: 100%;
+    cursor: pointer;
+    position: absolute;
+}
+
+#cta .arrow {
+    left: 30%;
+}
+
+.arrow {
+    position: absolute;
+    bottom: 10px;
+    margin-left: 0px;
+    width: 12px;
+    height: 12px;
+    background-size: contain;
+    top: 15px;
+}
+
+.segunda {
+    margin-left: 8px;
+}
+
+.previous {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjI2cHgiIHZpZXdCb3g9IjAgMCAxNSAydiIgIHdpZHRoPSIxNXB4IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwb2x5Z29uIGZpbGw9IiNGRkZGRkYiIHBvaW50cz0iMTIuODg1LDAuNTggMTQuOTY5LDIuNjY0IDQuMTMzLDEzLjUwIDE0Ljk2OSwyNC4zMzYgMTIuODg1LDI2LjQyIDIuMDQ5LDE1LjU4NCAtMC4wMzUsMTMuNTAiLz48L3N2Zz4=');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.next {
+	background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.flip-container p{
+    font-size: 2vw;
+}
+
+.flip-container {
+    animation: float 3s ease-in-out infinite;
+    
+}
+
+@keyframes bounceAlpha {
+    0% {opacity: 1; transform: translateX(0px) scale(1);}
+    25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+    26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+    55% {opacity: 1; transform: translateX(0px) scale(1);}
+  }
+
+.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.arrow.primera.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration: 1.4s;
+    animation-delay: 0.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.round:hover .arrow {
+    animation-name: bounceAlpha;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.round:hover .arrow.primera {
+    animation-name: bounceAlpha;
+    animation-duration: 1.4s;
+    animation-delay: 0.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+@keyframes bounceAlphaback {
+    0% { opacity: 1; transform: translateX(0px) scale(1); }
+    25% { opacity: 0; transform: translateX(-10px) scale(0.9); }
+    26% { opacity: 0; transform: translateX(10px) scale(0.9); }
+    55% { opacity: 1; transform: translateX(0px) scale(1); }
+}
+
+.bounceAlphaback {
+    animation-name: bounceAlphaback;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.arrow.primera.previous.bounceAlphaback {
+    animation-name: bounceAlphaback;
+    animation-duration: 1.4s;
+    animation-delay: 0.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.round:hover .arrow.previous {
+    animation-name: bounceAlphaback;
+    animation-duration: 1.4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.round:hover .arrow.primera.previous {
+    animation-name: bounceAlphaback;
+    animation-duration: 1.4s;
+    animation-delay: 0.2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+
+
+
+
+.portfolio_photos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+    
+}
+
+/* Column styling */
+.photo-column {
+    flex: 1;
+    flex-direction: row;
+    padding: 10px;
+}
+
+/* Container for the flip effect */
+.flip-container {
+    perspective: 1000px; /* Provides 3D perspective */
+    width: 30vw; /* Adjust to your desired width */
+    height: 30vw; /* Adjust to your desired height */
+    margin: 20px; /* Adjust as needed */
+    border-radius: 50%; /* Circular container */
+    overflow: auto; /* Ensures content does not overflow the circular border */
+    position: relative; /* Ensure child elements are positioned relative to this container */
+}
+
+/* The flip card */
+.flip-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+/* The inner part of the flip card */
+.flip-card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Front and back of the flip card */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 5px solid white; /* White border */
+    border-radius: 50%; /* Circular border */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden; /* Hides the back side when facing away */
+}
+
+/* Front side of the flip card (image) */
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the circular area */
+    border-radius: 50%; /* Ensure image maintains circular shape */
+}
+
+/* Back side of the flip card (text) */
+.flip-card-back {
+    background-color: black; /* White background for text side */
+    color: white; /* Black text color */
+    transform: rotateY(180deg); /* Hide back side initially */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* Adjust padding as needed */
+    box-sizing: border-box;
+    border-radius: 50%; /* Circular background */
+    overflow: hidden; /* Ensures text does not overflow the circular border */
+}
+
+/* Flip effect on hover */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Logo Text Animation */
+#logo svg text {
+    font-family: 'Alice', serif;
+    background-color: rgba(0, 0, 0, 0.014);
+    letter-spacing: 10px;
+    stroke: #ffffff;
+    font-size: 40px;
+    font-weight: 700;
+    stroke-width: 2;
+    animation: textAnimate 8s infinite alternate;
+}
+
+@keyframes textAnimate {
+    0% {
+        stroke-dasharray: 0 50%;
+        stroke-dashoffset: 20%;
+        fill: hsl(0, 0%, 100%);
+    }
+
+    100% {
+        stroke-dasharray: 50% 0;
+        stroke-dashoffset: -20%;
+        fill: hsla(0, 0%, 100%, 1%);
+    }
+}
+
+.hamburger-menu {
+    display: none;
+  }
+  
+  .hamburger-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the default menu */
+        flex-direction: column;
+        width: 100%;
+        background-color: none; /* Background color for the dropdown menu */
+        position: absolute;
+        top: 60px; /* Adjust based on your layout */
+        right: 0;
+        left: 0;
+        z-index: 1000;
+      }
+    
+      .hamburger-menu {
+        display: flex; /* Show hamburger icon */
+        justify-content: end;
+      }
+    
+      nav ul.show {
+        display: flex; /* Show the menu when hamburger is clicked */
+        flex-direction: column-reverse;
+        align-items: end;
+      }
+    
+      nav ul li {
+        margin: 0;
+        padding: 10px 15px;
+        flex
+      }
+    
+      nav a {
+        font-size: 18px; /* Adjust font size for mobile */
+      }
+      
+      .scroll-section #gridSection{
+        display: flex;
+        flex-direction: column;
+        margin-top: 30%;
+        margin-bottom: 10%;
+        overflow-y: auto;
+        height: 100%;
+    }
+
+      .flip-container{
+        width: 40vw;
+        height: 40vw;
+        overflow-y: auto;
+      }
+  }

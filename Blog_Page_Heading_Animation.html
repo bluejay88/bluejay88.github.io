@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Design Agency Blog</title>
+    <link rel="stylesheet" href="CSS/Blog_Page_Heading_Animation.css">
+</head>
+<body>
+    <header>
+        <div id="logo" class="logo">
+            <div class="patterns">
+                <a href="page_headings_animation_template.html?target=index.html"><svg width="100" height="50">
+                    <defs>
+                        <pattern id="polka-dots" x="10" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                            <circle fill="#ffffff" cx="25" cy="25" r="3"></circle>
+                        </pattern>
+                        <style>
+                            @import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
+                        </style>
+                    </defs>
+                    <rect x="0" y="0" width="100%" height="100%" fill="black"></rect>
+                    <text x="50%" y="60%" text-anchor="middle" fill="white">&lt;a&gt;</text>
+                </svg></a>
+            </div>
+        </div>
+        <nav>
+            <div class="hamburger-menu">
+                <div class="hamburger-icon" onclick="toggleMenu()">☰</div>
+              </div>
+            <ul class="nav-links">
+                <li><a href="Faq_Page_Heading_Animation.html">FAQ</a></li>
+                <li><a href="Blog_Page_Heading_Animation.html">Blog</a></li>
+                <li><a href="index.html#section5">Portfolio</a></li>
+                <li><a href="index.html#section4">Contact Us</a></li>
+                <li><a href="index.html#section3">About Us</a></li>
+                <li><a href="index.html#section2">Services</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="blog-entries">
+            <!-- Blog entries will be dynamically inserted here -->
+        </section>
+    </main>
+
+    <script src="JS/Blog_Page_Heading_Animation.js"></script>
+</body>
+</html>
