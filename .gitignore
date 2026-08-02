@@ -1,0 +1,7 @@
+node_modules/
+.netlify/
+output/
+playwright-report/
+test-results/
+.codex-http.pid
+.playwright-cli/

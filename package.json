@@ -1,0 +1,20 @@
+{
+  "name": "anchor-web-design-studios",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Responsive studio site with an AI concierge and project operations dashboard.",
+  "scripts": {
+    "dev": "http-server . -p 4173 -c-1",
+    "audit": "node scripts/audit.mjs",
+    "test": "node scripts/test.mjs",
+    "test:ten": "node scripts/test.mjs --runs=10",
+    "check": "npm run audit && npm run test:ten",
+    "netlify:preview": "netlify deploy",
+    "netlify:prod": "netlify deploy --prod"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.54.2",
+    "axe-core": "^4.10.3",
+    "http-server": "^14.1.1"
+  }
+}
