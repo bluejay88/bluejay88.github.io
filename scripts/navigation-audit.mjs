@@ -1,0 +1,9 @@
+import {chromium} from '@playwright/test';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+
+const pages=['index.html','Services.html','Portfolio_next.html','About_Us.html','Design_Process.html','Ecosystem.html','AI_Tools.html','Blog_Page_Heading_Animation.html','Partners.html','Meet_Aurelius.html','site_form7.html'];
+const expected=['Home','Services','Work','Studio','Process','Ecosystem','AI Futures','Insights','Partners','Meet Aurelius','Begin a project'];
+const failures=[];let checks=0;const browser=await chromium.launch({headless:true});
+for(const viewport of [{name:'desktop',width:1440,height:900},{name:'tablet',width:1024,height:900}]){const context=await browser.newContext({viewport});for(const file of pages){const page=await context.newPage();await page.goto(pathToFileURL(path.join(process.cwd(),file)).href,{waitUntil:'domcontentloaded'});await page.waitForTimeout(100);const nav=page.locator('.anchor-nav');const labels=await nav.locator('a').allTextContents();const active=await nav.locator('a[aria-current="page"]').count();const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-document.documentElement.clientWidth);checks+=4;if(JSON.stringify(labels.map(x=>x.trim()))!==JSON.stringify(expected))failures.push(`${file} ${viewport.name}: route map differs`);if(active!==1)failures.push(`${file} ${viewport.name}: expected one active route, got ${active}`);if(overflow>3)failures.push(`${file} ${viewport.name}: ${overflow}px overflow`);if(viewport.name==='tablet'){const menu=page.locator('.anchor-menu');if(!await menu.isVisible())failures.push(`${file}: responsive menu missing`);else{await menu.click();if(!await nav.evaluate(el=>el.classList.contains('is-open')))failures.push(`${file}: responsive menu did not open`);}}await page.close()}await context.close()}
+await browser.close();console.log(JSON.stringify({pages:pages.length,checks,failures},null,2));if(failures.length)process.exitCode=1;
