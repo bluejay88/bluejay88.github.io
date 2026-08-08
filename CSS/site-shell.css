@@ -24,7 +24,7 @@
 .anchor-skip:focus{transform:translateY(0);outline:2px solid var(--anchor-shell-gold);outline-offset:3px}
 body.has-anchor-shell{padding-top:68px}
 body.has-anchor-shell>header:not(.anchor-shell){display:none}
-@media (max-width:900px){
+@media (max-width:1180px){
   .anchor-shell-managed .anchor-menu{display:block}
   .anchor-shell-managed .anchor-nav,.anchor-shell .anchor-nav{position:fixed;z-index:74;top:68px;left:0;right:0;display:none;align-items:stretch;gap:0;padding:14px 22px 22px;background:rgba(9,9,6,.98);border-bottom:1px solid var(--anchor-shell-line)}
   .anchor-shell-managed .anchor-nav.is-open,.anchor-shell .anchor-nav.is-open{display:flex;flex-direction:column}

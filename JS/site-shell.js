@@ -11,6 +11,7 @@
     ['Ecosystem.html', 'Ecosystem'],
     ['AI_Tools.html', 'AI Futures'],
     ['Blog_Page_Heading_Animation.html', 'Insights'],
+    ['Partners.html', 'Partners'],
     ['Meet_Aurelius.html', 'Meet Aurelius'],
     ['site_form7.html', 'Begin a project', true]
   ];
@@ -104,7 +105,7 @@
       button.focus();
     });
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 900 && nav.classList.contains('is-open')) setOpen(false);
+      if (window.innerWidth > 1180 && nav.classList.contains('is-open')) setOpen(false);
     }, { passive: true });
   };
 
