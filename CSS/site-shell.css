@@ -1,5 +1,8 @@
 /* Shared wayfinding layer for the restored Anchor pages. */
 :root{--anchor-shell-ink:#090906;--anchor-shell-ivory:#faf5e9;--anchor-shell-gold:#e4bd78;--anchor-shell-line:rgba(250,245,233,.28)}
+.site-header.anchor-shell-managed,.anchor-shell{height:68px;padding-left:36px;padding-right:36px}
+.anchor-shell-managed .anchor-nav,.anchor-shell .anchor-nav{flex:1;justify-content:space-between;margin-left:18px;gap:12px}
+.anchor-shell-managed .anchor-nav a,.anchor-shell .anchor-nav a{font-size:10px}
 .anchor-shell-managed .anchor-nav{display:flex;align-items:center;gap:clamp(14px,2.35vw,36px)}
 .anchor-shell-managed .anchor-nav a{color:var(--anchor-shell-ivory);font-family:var(--sans,'Manrope',sans-serif);font-size:10px;letter-spacing:.13em;text-decoration:none;text-transform:uppercase;white-space:nowrap;transition:color .22s ease}
 .anchor-shell-managed .anchor-nav a:hover,.anchor-shell-managed .anchor-nav a[aria-current="page"]{color:var(--anchor-shell-gold)}
@@ -27,6 +30,7 @@ body.has-anchor-shell>header:not(.anchor-shell){display:none}
 @media (max-width:1180px){
   .anchor-shell-managed .anchor-menu{display:block}
   .anchor-shell-managed .anchor-nav,.anchor-shell .anchor-nav{position:fixed;z-index:74;top:68px;left:0;right:0;display:none;align-items:stretch;gap:0;padding:14px 22px 22px;background:rgba(9,9,6,.98);border-bottom:1px solid var(--anchor-shell-line)}
+  .anchor-shell-managed .anchor-nav,.anchor-shell .anchor-nav{margin-left:0}
   .anchor-shell-managed .anchor-nav.is-open,.anchor-shell .anchor-nav.is-open{display:flex;flex-direction:column}
   .anchor-shell-managed .anchor-nav a,.anchor-shell .anchor-nav a{padding:13px 0;font-size:11px}
   .anchor-shell-managed .anchor-nav .anchor-nav-cta,.anchor-shell .anchor-nav .anchor-nav-cta{padding:13px;margin-top:7px;text-align:center}

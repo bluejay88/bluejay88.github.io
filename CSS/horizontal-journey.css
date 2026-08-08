@@ -3,7 +3,7 @@
   html:has(body.horizontal-journey),body.horizontal-journey{width:100%;height:100%;overflow:hidden}
   body.horizontal-journey main{display:flex;width:100vw;max-width:100vw;height:100svh;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none}
   body.horizontal-journey main::-webkit-scrollbar{display:none}
-  body.horizontal-journey main>section{flex:0 0 100vw;width:100vw;min-height:100svh;height:100svh;max-height:100svh;overflow-y:auto;overscroll-behavior-y:contain;scroll-snap-align:start;scroll-snap-stop:always;scrollbar-width:thin}
+  body.horizontal-journey main>section,body.horizontal-journey main>article{flex:0 0 100vw;width:100vw;min-height:100svh;height:100svh;max-height:100svh;overflow-y:auto;overscroll-behavior-y:contain;scroll-snap-align:start;scroll-snap-stop:always;scrollbar-width:thin}
   body.horizontal-journey .notes-ledger,body.horizontal-journey .process-sequence{overflow-y:auto}
   body.horizontal-journey .process-sequence{display:flex;padding:0}
   body.horizontal-journey .process-sequence article{flex:0 0 100vw;width:100vw;min-height:100svh;height:100svh;padding-left:clamp(22px,8vw,130px);padding-right:clamp(22px,8vw,130px)}
