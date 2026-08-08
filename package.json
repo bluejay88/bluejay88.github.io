@@ -29,7 +29,6 @@
     "immutable": "^4.3.9"
   },
   "dependencies": {
-    "@netlify/blobs": "^9.1.5",
-    "resend": "^6.18.1"
+    "@netlify/blobs": "^9.1.5"
   }
 }
