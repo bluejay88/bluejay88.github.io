@@ -37,3 +37,13 @@ body.has-anchor-shell>header:not(.anchor-shell){display:none}
 .ecosystem-page{overflow-x:hidden}
 .ecosystem-loop{overflow:hidden}
 @media (max-width:850px){.ecosystem-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ecosystem-node{min-width:0}.ecosystem-node h3,.ecosystem-node p{overflow-wrap:anywhere}}
+
+/* Readability floor: gold is an action surface, never a text color on an action surface. */
+.button:not(:hover),.studio-button:not(:hover),.anchor-shell-managed .anchor-nav .anchor-nav-cta:not(:hover),.anchor-shell .anchor-nav .anchor-nav-cta:not(:hover){color:#171109!important;text-shadow:none!important;font-size:11px;font-weight:800}
+.button,.studio-button{line-height:1.25}
+.agent-form button,.aurelius-form button{color:#171109!important;font-weight:800}
+.eyebrow{font-size:clamp(10px,.78vw,12px)!important;line-height:1.45}
+.text-link,.case-link{font-size:12px!important;font-weight:700}
+.article-list b,.episode-columns li>b,.case-tags,.filters span,.ai-disciplines span,.process-sequence span,.ecosystem-node span{font-size:10px!important}
+.notes-page .article-list p,.podcast-page .episode-columns p,.work-page .case-copy>p:not(.eyebrow),.ai-tools-page .ai-disciplines ul{font-size:clamp(14px,1.1vw,16px)!important;line-height:1.72}
+@media(max-width:760px){.button:not(:hover),.studio-button:not(:hover){font-size:11px}.text-link,.case-link{font-size:12px!important}.article-list b,.episode-columns li>b,.case-tags,.filters span,.ai-disciplines span,.process-sequence span,.ecosystem-node span{font-size:10px!important}}
