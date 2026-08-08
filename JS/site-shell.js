@@ -16,7 +16,9 @@
     ['site_form7.html', 'Begin a project', true]
   ];
   const horizontalFiles = new Set(['index.html','services.html','portfolio_next.html','design_process.html','ecosystem.html','ai_tools.html','blog_page_heading_animation.html','podcast.html','partners.html']);
-  const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const routeFiles = {services:'services.html',portfolio:'portfolio_next.html',studio:'about_us.html','design-process':'design_process.html',ecosystem:'ecosystem.html','ai-futures':'ai_tools.html',insights:'blog_page_heading_animation.html',partners:'partners.html','meet-aurelius':'meet_aurelius.html','begin-project':'site_form7.html',contact:'site_form7.html',podcast:'podcast.html'};
+  const pathToken = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
+  const file = routeFiles[pathToken] || pathToken;
   const currentFor = href => href.toLowerCase() === file || (file === '' && href === 'index.html');
 
   const createNav = () => {
