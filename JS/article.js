@@ -27,6 +27,14 @@
     'ai-readiness': ['Aug 2024','AI Strategy · Transformation','The Executive Case for AI Readiness','Before selecting tools, identify the work, information, owners, and risks that matter.']
   };
   const key = new URLSearchParams(location.search).get('issue') || 'enduring-enterprise';
+  const authored = window.AnchorNoteIssues && window.AnchorNoteIssues[key];
+  if (authored) {
+    const body = document.querySelector('#article');
+    document.title = `${authored.title} — Anchor Notes`;
+    const sourceLinks = (authored.sources || []).map(source => `<li><a href="${source.url}" target="_blank" rel="noreferrer">${source.label}</a></li>`).join('');
+    body.innerHTML = `<p class="article-kicker">Anchor Notes · ${authored.date}</p><h1>${authored.title}</h1><p class="article-dek">${authored.dek}</p><p class="article-meta">${authored.tags} · Long-form editorial</p><div class="article-hero" style="background-image:linear-gradient(90deg,rgba(10,9,6,.28),rgba(10,9,6,.05)),url('${authored.hero || 'IMG/anchor-studio-forum-4k.png'}')" aria-hidden="true"></div><div class="article-body">${authored.sections.map(section => `<h2>${section.heading}</h2><p>${section.body}</p>`).join('')}<aside class="article-note"><strong>Editorial note.</strong> This archive is maintained as an educational point of view, not legal, security, or financial advice. Apply policies and professional review appropriate to your organization.</aside><section class="article-sources"><h2>Further reading</h2><ul>${sourceLinks}</ul></section><nav class="article-next" aria-label="Article navigation"><a href="Blog_Page_Heading_Animation.html">← Return to Notes</a><a href="Meet_Aurelius.html">Discuss the work with Aurelius →</a></nav></div>`;
+    return;
+  }
   const issue = issues[key] || issues['enduring-enterprise'];
   const [date, tags, title, dek] = issue;
   document.title = `${title} — Anchor Notes`;

@@ -8,6 +8,7 @@
     "audit": "node scripts/audit.mjs",
     "test": "node scripts/test.mjs",
     "test:agent": "node scripts/aurelius-test.mjs",
+    "test:notes": "node scripts/validate-notes.mjs",
     "test:ten": "node scripts/test.mjs --runs=10",
     "check": "npm run audit && npm test && npm run test:agent && npm run test:ten",
     "dev:sync": "browser-sync start --server --files \"*.html,CSS/*.css,JS/*.js\" --port 4173 --ui-port 4174 --no-open",
