@@ -55,6 +55,14 @@
   to = "/Partners.html"
   status = 301
 [[redirects]]
+  from = "/capabilities"
+  to = "/Capabilities.html"
+  status = 301
+[[redirects]]
+  from = "/schedule"
+  to = "/Schedule.html"
+  status = 301
+[[redirects]]
   from = "/begin-project"
   to = "/site_form7.html"
   status = 301

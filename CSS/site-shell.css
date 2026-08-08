@@ -1,9 +1,10 @@
 /* Shared wayfinding layer for the restored Anchor pages. */
 :root{--anchor-shell-ink:#090906;--anchor-shell-ivory:#faf5e9;--anchor-shell-gold:#e4bd78;--anchor-shell-line:rgba(250,245,233,.28)}
 .site-header.anchor-shell-managed,.anchor-shell{height:68px;padding-left:36px;padding-right:36px}
-.anchor-shell-managed .anchor-nav,.anchor-shell .anchor-nav{flex:1;justify-content:space-between;margin-left:18px;gap:12px}
+.anchor-shell-managed .anchor-nav,.anchor-shell .anchor-nav{flex:1;justify-content:flex-start;margin-left:18px;gap:clamp(16px,1.6vw,26px)}
+.anchor-shell-managed .anchor-nav .anchor-nav-cta,.anchor-shell .anchor-nav .anchor-nav-cta{margin-left:auto}
 .anchor-shell-managed .anchor-nav a,.anchor-shell .anchor-nav a{font-size:10px}
-.anchor-shell-managed .anchor-nav{display:flex;align-items:center;gap:clamp(14px,2.35vw,36px)}
+.anchor-shell-managed .anchor-nav{display:flex;align-items:center}
 .anchor-shell-managed .anchor-nav a{color:var(--anchor-shell-ivory);font-family:var(--sans,'Manrope',sans-serif);font-size:10px;letter-spacing:.13em;text-decoration:none;text-transform:uppercase;white-space:nowrap;transition:color .22s ease}
 .anchor-shell-managed .anchor-nav a:hover,.anchor-shell-managed .anchor-nav a[aria-current="page"]{color:var(--anchor-shell-gold)}
 .anchor-shell-managed .anchor-nav .anchor-nav-cta{border:1px solid rgba(199,164,102,.78);padding:10px 13px;color:var(--anchor-shell-gold)}

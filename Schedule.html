@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="Reserve a private 30-minute strategy meeting with Anchor Web Designs.">
+  <title>Reserve a Meeting — Anchor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/executive.css"><link rel="stylesheet" href="CSS/site-shell.css"><link rel="stylesheet" href="CSS/schedule.css">
+</head>
+<body class="schedule-page">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header scrolled"><a class="mark" href="index.html" aria-label="Anchor home"><span>A</span><small>Anchor</small></a><button class="menu" aria-expanded="false" aria-controls="nav">Menu</button><nav id="nav"><a href="index.html">Home</a></nav></header>
+  <main id="main">
+    <section class="schedule-hero">
+      <div class="schedule-copy"><p class="eyebrow">Private strategy calendar</p><h1>Choose the<br><em>right room.</em></h1><p class="lede">Reserve a focused thirty-minute conversation with Anchor. Each available time is held immediately, so there is never a double booking.</p><dl class="schedule-rules"><div><dt>When</dt><dd>Monday–Friday</dd></div><div><dt>Windows</dt><dd>2:00–3:00 PM<br>5:30–8:00 PM</dd></div><div><dt>Duration</dt><dd>30 minutes</dd></div><div><dt>Time zone</dt><dd>Central Time</dd></div></dl></div>
+      <form class="booking-form" id="booking-form" novalidate>
+        <div class="booking-form__heading"><p class="eyebrow">Reserve a time</p><p>All times shown in Central Time. A confirmation is sent after the reservation is secured.</p></div>
+        <p class="form-status" id="booking-status" aria-live="polite"></p>
+        <div class="booking-grid">
+          <div class="field"><label for="meeting-date">Date *</label><input id="meeting-date" name="date" type="date" required></div>
+          <div class="field"><label for="meeting-time">Available time *</label><select id="meeting-time" name="time" required disabled><option value="">Choose a weekday first</option></select></div>
+          <div class="field"><label for="meeting-name">Name *</label><input id="meeting-name" name="name" required autocomplete="name"></div>
+          <div class="field"><label for="meeting-email">Work email *</label><input id="meeting-email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="meeting-company">Organization</label><input id="meeting-company" name="company" autocomplete="organization"></div>
+          <div class="field"><label for="meeting-phone">Telephone</label><input id="meeting-phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div class="field full"><label for="meeting-topic">Meeting focus *</label><select id="meeting-topic" name="topic" required><option value="">Select a focus</option><option>Digital flagship</option><option>AI systems</option><option>Operations platform</option><option>AI education</option><option>Growth and stewardship</option><option>Partnership</option></select></div>
+          <div class="field full"><label for="meeting-notes">What should we prepare? *</label><textarea id="meeting-notes" name="notes" required minlength="20" placeholder="Tell us the decision, objective, or opportunity this meeting should move."></textarea></div>
+          <label class="privacy full"><input type="checkbox" name="consent" required> I agree that Anchor may use this information to schedule and respond to this meeting.</label>
+        </div>
+        <button class="button booking-submit" type="submit">Reserve this time <span aria-hidden="true">→</span></button>
+      </form>
+    </section>
+  </main>
+  <script src="JS/executive.js"></script><script src="JS/site-shell.js"></script><script src="JS/schedule.js"></script>
+</body>
+</html>

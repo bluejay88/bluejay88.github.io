@@ -12,6 +12,7 @@
     "test:navigation": "node scripts/navigation-audit.mjs",
     "test:journey": "node scripts/horizontal-journey-audit.mjs",
     "test:motion": "node scripts/motion-audit.mjs",
+    "test:booking": "node scripts/booking-core-test.mjs",
     "test:ten": "node scripts/test.mjs --runs=10",
     "check": "npm run audit && npm test && npm run test:agent && npm run test:ten",
     "dev:sync": "browser-sync start --server --files \"*.html,CSS/*.css,JS/*.js\" --port 4173 --ui-port 4174 --no-open",
@@ -26,5 +27,9 @@
   },
   "overrides": {
     "immutable": "^4.3.9"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^9.1.5",
+    "resend": "^6.18.1"
   }
 }
