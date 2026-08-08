@@ -54,6 +54,30 @@
     document.body.append(link);
   };
 
+  const addFilmNarration = () => {
+    if (file !== 'design_process.html' || document.querySelector('.anchor-film-audio')) return;
+    const host = document.querySelector('.process-hero-copy');
+    if (!host) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'anchor-film-audio';
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.innerHTML = '<span aria-hidden="true">▶</span> Play film narration';
+    const note = document.createElement('small');
+    note.textContent = 'AI-generated voice · 00:18';
+    const audio = document.createElement('audio');
+    audio.preload = 'metadata';
+    audio.src = 'AUDIO/design-process-narration.mp3';
+    audio.addEventListener('ended', () => { button.innerHTML = '<span aria-hidden="true">▶</span> Play film narration'; button.setAttribute('aria-pressed', 'false'); });
+    button.addEventListener('click', async () => {
+      if (audio.paused) {
+        try { await audio.play(); button.innerHTML = '<span aria-hidden="true">❚❚</span> Pause narration'; button.setAttribute('aria-pressed', 'true'); } catch { note.textContent = 'Narration could not start. Please try again.'; }
+      } else { audio.pause(); button.innerHTML = '<span aria-hidden="true">▶</span> Play film narration'; button.setAttribute('aria-pressed', 'false'); }
+    });
+    wrap.append(button, note, audio);
+    host.append(wrap);
+  };
+
   const wireMenu = (nav, button) => {
     const setOpen = (open, moveFocus = false) => {
       nav.classList.toggle('is-open', open);
@@ -121,6 +145,7 @@
     const executiveHeader = document.querySelector('.site-header');
     if (executiveHeader) enhanceExecutiveHeader(executiveHeader); else addLegacyHeader();
     addWayfinding();
+    addFilmNarration();
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
