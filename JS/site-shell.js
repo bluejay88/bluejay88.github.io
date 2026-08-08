@@ -55,7 +55,7 @@
   };
 
   const addFilmNarration = () => {
-    if (file !== 'design_process.html' || document.querySelector('.anchor-film-audio')) return;
+    if (!document.body.classList.contains('process-page') || document.querySelector('.anchor-film-audio')) return;
     const host = document.querySelector('.process-hero-copy');
     if (!host) return;
     const wrap = document.createElement('div');
