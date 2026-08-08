@@ -101,6 +101,17 @@
     const main = document.querySelector('main');
     if (!main || main.dataset.journeyReady) return;
     main.dataset.journeyReady = 'true';
+    const frames = [...main.children].filter(node => /^(SECTION|ARTICLE)$/.test(node.tagName));
+    if (frames.length > 1) {
+      const rail = document.createElement('nav');
+      rail.className = 'anchor-frame-nav'; rail.setAttribute('aria-label', 'Journey progress');
+      rail.innerHTML = '<button type="button" class="anchor-frame-nav__previous" aria-label="Previous frame">←</button><span class="anchor-frame-nav__count"><b>01</b><i>/</i><em></em></span><button type="button" class="anchor-frame-nav__next" aria-label="Next frame">→</button>';
+      rail.querySelector('em').textContent = String(frames.length).padStart(2,'0');
+      const update = () => { const index = Math.min(frames.length - 1, Math.max(0, Math.round(main.scrollLeft / main.clientWidth))); rail.querySelector('b').textContent = String(index + 1).padStart(2,'0'); rail.querySelector('.anchor-frame-nav__previous').disabled = index === 0; rail.querySelector('.anchor-frame-nav__next').disabled = index === frames.length - 1; };
+      rail.querySelector('.anchor-frame-nav__previous').addEventListener('click', () => main.scrollBy({left:-main.clientWidth,behavior:'smooth'}));
+      rail.querySelector('.anchor-frame-nav__next').addEventListener('click', () => main.scrollBy({left:main.clientWidth,behavior:'smooth'}));
+      main.addEventListener('scroll', update, {passive:true}); document.body.append(rail); update();
+    }
     let lock = false;
     main.addEventListener('wheel', event => {
       if (Math.abs(event.deltaY) < Math.abs(event.deltaX) || !event.deltaY) return;
