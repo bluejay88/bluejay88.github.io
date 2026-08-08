@@ -15,6 +15,7 @@
     ['Meet_Aurelius.html', 'Meet Aurelius'],
     ['site_form7.html', 'Begin a project', true]
   ];
+  const horizontalFiles = new Set(['index.html','services.html','portfolio_next.html','design_process.html','ecosystem.html','ai_tools.html','blog_page_heading_animation.html','podcast.html','partners.html']);
   const file = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
   const currentFor = href => href.toLowerCase() === file || (file === '' && href === 'index.html');
 
@@ -87,6 +88,27 @@
     document.body.append(script);
   };
 
+  const addHorizontalJourney = () => {
+    if (!horizontalFiles.has(file) || document.body.classList.contains('studio-page') || document.body.classList.contains('aurelius-page')) return;
+    document.body.classList.add('horizontal-journey');
+    if (!document.querySelector('link[data-anchor-journey]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet'; link.href = 'CSS/horizontal-journey.css'; link.dataset.anchorJourney = 'true';
+      document.head.append(link);
+    }
+    const main = document.querySelector('main');
+    if (!main || main.dataset.journeyReady) return;
+    main.dataset.journeyReady = 'true';
+    let lock = false;
+    main.addEventListener('wheel', event => {
+      if (Math.abs(event.deltaY) < Math.abs(event.deltaX) || !event.deltaY) return;
+      if (innerWidth < 761) return;
+      event.preventDefault();
+      if (lock) return;
+      lock = true; main.scrollBy({left:Math.sign(event.deltaY) * main.clientWidth,behavior:'smooth'}); setTimeout(() => { lock=false; }, 520);
+    }, {passive:false});
+  };
+
   const wireMenu = (nav, button) => {
     const setOpen = (open, moveFocus = false) => {
       nav.classList.toggle('is-open', open);
@@ -156,6 +178,7 @@
     addWayfinding();
     addFilmNarration();
     addNotesLinks();
+    addHorizontalJourney();
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });

@@ -1,0 +1,8 @@
+import {chromium} from '@playwright/test';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+
+const pages=['index.html','Services.html','Portfolio_next.html','Design_Process.html','Ecosystem.html','AI_Tools.html','Blog_Page_Heading_Animation.html','Podcast.html','Partners.html'];
+const browser=await chromium.launch({headless:true});const failures=[];let checks=0;
+for(const file of pages){const page=await browser.newPage({viewport:{width:1440,height:900}});await page.goto(pathToFileURL(path.join(process.cwd(),file)).href,{waitUntil:'domcontentloaded'});await page.waitForTimeout(120);const before=await page.evaluate(()=>({vertical:document.documentElement.scrollHeight-innerHeight,rail:document.querySelector('main')?.scrollWidth-innerWidth,position:document.querySelector('main')?.scrollLeft||0}));await page.locator('main').evaluate(main=>main.dispatchEvent(new WheelEvent('wheel',{deltaY:760,bubbles:true,cancelable:true})));await page.waitForTimeout(650);const after=await page.locator('main').evaluate(main=>main.scrollLeft);checks+=4;if(before.vertical>3)failures.push(`${file}: ${before.vertical}px document vertical overflow`);if(before.rail<1440)failures.push(`${file}: no horizontal journey rail`);if(after<=before.position)failures.push(`${file}: vertical-wheel input did not advance the horizontal rail`);if(!await page.locator('.anchor-nav').count())failures.push(`${file}: shared navigation absent`);await page.close()}
+await browser.close();console.log(JSON.stringify({pages:pages.length,checks,failures},null,2));if(failures.length)process.exitCode=1;
