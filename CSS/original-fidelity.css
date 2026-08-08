@@ -18,6 +18,11 @@
 .hero::after { background: linear-gradient(90deg, rgba(0,0,0,.17), transparent 22% 78%, rgba(0,0,0,.22)), repeating-linear-gradient(90deg, transparent 0 96px, rgba(224,190,120,.025) 97px 98px); opacity: .68; }
 .hero .grain { z-index: 1; animation: anchor-grain-shift .4s steps(2,end) infinite; }
 .hero-copy,.hero-index { z-index: 2; }
+.hero-copy h1 { color: #f4eee1 !important; text-shadow: 0 4px 28px rgba(0,0,0,.68); }
+.hero-copy h1 em { color: #d1a955 !important; }
+.hero-copy .eyebrow { color: #d8b76f !important; text-shadow: 0 2px 14px rgba(0,0,0,.85); }
+.hero-copy .lede { color: #e1dacb !important; text-shadow: 0 2px 16px rgba(0,0,0,.85); }
+.hero-copy .text-link { color: #f1eadc !important; }
 
 @keyframes anchor-cinematic-drift { from { transform: scale(1.055) translate3d(-.6%,.2%,0); background-position: 50% 50%; } to { transform: scale(1.115) translate3d(1.1%,-.5%,0); background-position: 53% 46%; } }
 @keyframes anchor-cinematic-light { from { transform: translate3d(-5%,2%,0) rotate(-3deg); opacity: .3; } to { transform: translate3d(5%,-2%,0) rotate(3deg); opacity: .9; } }
