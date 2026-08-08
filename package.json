@@ -7,14 +7,20 @@
     "dev": "http-server . -p 4173 -c-1",
     "audit": "node scripts/audit.mjs",
     "test": "node scripts/test.mjs",
+    "test:agent": "node scripts/aurelius-test.mjs",
     "test:ten": "node scripts/test.mjs --runs=10",
-    "check": "npm run audit && npm run test:ten",
+    "check": "npm run audit && npm test && npm run test:agent && npm run test:ten",
+    "dev:sync": "browser-sync start --server --files \"*.html,CSS/*.css,JS/*.js\" --port 4173 --ui-port 4174 --no-open",
     "netlify:preview": "netlify deploy",
     "netlify:prod": "netlify deploy --prod"
   },
   "devDependencies": {
     "@playwright/test": "^1.54.2",
     "axe-core": "^4.10.3",
+    "browser-sync": "^3.0.4",
     "http-server": "^14.1.1"
+  },
+  "overrides": {
+    "immutable": "^4.3.9"
   }
 }

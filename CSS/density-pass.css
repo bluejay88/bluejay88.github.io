@@ -1,0 +1,20 @@
+/* Preserve the original system while giving its media more of the visual workload. */
+.oracle {
+  isolation: isolate;
+  overflow: hidden;
+  background: #100d08;
+}
+.oracle::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(12,10,7,.94) 0%, rgba(12,10,7,.58) 44%, rgba(12,10,7,.1) 100%), url('../IMG/anchor-ai-oracle-4k.png') center/cover no-repeat;
+  animation: oracle-depth 18s ease-in-out infinite alternate;
+}
+.oracle-art { background-image: linear-gradient(90deg, transparent, rgba(23,19,13,.3)), url('../IMG/anchor-ai-oracle-4k.png'); background-size: cover; background-position: 80% center; filter: none; opacity: .86; }
+.oracle-copy { text-shadow: 0 3px 20px rgba(0,0,0,.8); }
+.oracle-copy .button { margin-top: 10px; }
+@keyframes oracle-depth { from { transform: scale(1.02) translate3d(-4px, 0, 0); } to { transform: scale(1.07) translate3d(8px, -4px, 0); } }
+@media (max-width: 760px) { .oracle::before { background-position: 66% center; }.oracle-art { min-height: 48vh; height: 48vh; background-position: 70% center; } }
+@media (prefers-reduced-motion: reduce) { .oracle::before { animation: none; } }

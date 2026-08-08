@@ -1,0 +1,37 @@
+body.aurelius-page { min-height: 100svh; overflow-x: hidden; background: #090806; }
+.site-header nav a.active { color: var(--gold); }
+.aurelius-stage { position: relative; min-height: 100svh; padding: 112px clamp(24px, 7vw, 112px) 44px; display: grid; grid-template-columns: minmax(0, .92fr) minmax(360px, .72fr); gap: clamp(30px, 8vw, 150px); align-items: center; overflow: hidden; }
+.aurelius-stage::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg, rgba(7,6,5,.97) 0%, rgba(7,6,5,.74) 39%, rgba(7,6,5,.12) 100%), url('../IMG/anchor-ai-oracle-4k.png') center/cover no-repeat; animation: aurelius-orbit 22s ease-in-out infinite alternate; }
+.aurelius-stage::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(circle at 78% 43%, rgba(231,191,104,.15), transparent 10%), linear-gradient(90deg, transparent 48%, rgba(231,191,104,.045) 70%, transparent); }
+.aurelius-intro { max-width: 650px; text-shadow: 0 3px 22px rgba(0,0,0,.8); animation: aurelius-enter .9s .08s both; }
+.aurelius-intro h1 { margin: 0; font: 500 clamp(64px, 9vw, 138px)/.86 var(--serif); letter-spacing: -.05em; }
+.aurelius-intro > p:not(.eyebrow) { max-width: 490px; margin: 34px 0 27px; color: #e1dacb; line-height: 1.75; font-size: clamp(16px, 1.3vw, 20px); }
+.intro-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; margin-bottom: 36px; }
+.intro-actions .button { padding: 14px 17px; }
+.aurelius-intro dl { display: grid; gap: 10px; max-width: 410px; margin: 0; }
+.aurelius-intro dl div { display: grid; grid-template-columns: 42px 1fr; gap: 12px; align-items: center; padding: 11px 0; border-top: 1px solid rgba(238,233,220,.2); }
+.aurelius-intro dt { color: var(--gold); font-size: 10px; letter-spacing: .16em; }
+.aurelius-intro dd { margin: 0; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #f4eddf; }
+.aurelius-chat { height: min(700px, calc(100svh - 135px)); min-height: 550px; display: flex; flex-direction: column; background: rgba(11,10,8,.86); border: 1px solid rgba(189,155,89,.58); box-shadow: 0 35px 100px rgba(0,0,0,.54); backdrop-filter: blur(20px); animation: aurelius-enter .9s .2s both; }
+.aurelius-chat > header { display: flex; align-items: center; gap: 13px; padding: 19px 20px; border-bottom: 1px solid rgba(238,233,220,.18); }
+.aurelius-chat header b { display: block; font: 500 19px var(--serif); }
+.aurelius-chat header small { display: block; margin-top: 5px; color: #c0b9aa; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; }
+.aurelius-chat header i { display: inline-block; width: 6px; height: 6px; margin-right: 5px; border-radius: 50%; background: #91ae82; box-shadow: 0 0 0 4px rgba(145,174,130,.09); }
+.conversation-state { margin-left: auto; color: var(--gold); font-size: 8px; letter-spacing: .13em; text-transform: uppercase; }
+.aurelius-messages { flex: 1; overflow: auto; padding: 22px; display: flex; flex-direction: column; gap: 11px; scrollbar-color: rgba(189,155,89,.6) transparent; }
+.aurelius-message { max-width: 86%; padding: 13px 15px; background: rgba(43,37,27,.76); border-left: 1px solid var(--gold); color: #fffaf0; font-size: 13px; line-height: 1.58; }
+.aurelius-message.user { align-self: end; background: rgba(186,151,83,.19); border-left: 0; border-right: 1px solid var(--gold); }
+.aurelius-choices { display: flex; flex-wrap: wrap; gap: 7px; padding: 0 20px 12px; }
+.aurelius-choices button { border: 1px solid rgba(189,155,89,.55); background: rgba(9,8,6,.58); color: #f0dcae; padding: 9px 10px; cursor: pointer; font: 500 9px var(--sans); letter-spacing: .08em; transition: background .2s, color .2s, border-color .2s; }
+.aurelius-choices button:hover, .aurelius-choices button:focus-visible { outline: 0; background: var(--gold); border-color: var(--gold); color: #120f09; }
+.aurelius-form { display: flex; padding: 12px; border-top: 1px solid rgba(238,233,220,.18); }
+.aurelius-form input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: white; padding: 10px; font: 14px var(--sans); }
+.aurelius-form input::placeholder { color: #a59d8e; }
+.aurelius-form button { width: 44px; border: 0; color: #0b0906; background: var(--gold); cursor: pointer; font-size: 18px; transition: filter .2s, transform .2s; }
+.aurelius-form button:hover, .aurelius-form button:focus-visible { outline: 0; filter: brightness(1.15); transform: translateY(-1px); }
+.aurelius-note { margin: 0 15px 13px; text-align: center; color: #b0a899; font-size: 8px; letter-spacing: .1em; line-height: 1.5; text-transform: uppercase; }
+@keyframes aurelius-orbit { from { transform: scale(1.03) translate3d(-7px,0,0); } to { transform: scale(1.08) translate3d(9px,-6px,0); } }
+@keyframes aurelius-enter { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+@media (max-width: 860px) { .aurelius-stage { grid-template-columns: 1fr; align-content: start; padding: 95px 20px 24px; gap: 24px; }.aurelius-intro h1 { font-size: clamp(58px, 18vw, 92px); }.aurelius-intro > p:not(.eyebrow) { margin: 20px 0 24px; }.aurelius-intro dl { display: none; }.intro-actions { margin-bottom: 0; }.aurelius-chat { height: 590px; min-height: 0; }.aurelius-stage::before { background-position: 65% center; }.site-header nav { gap: 14px; }.site-header nav a:nth-child(3), .site-header nav a:nth-child(4) { display: none; } }
+@media (max-width: 460px) { .conversation-state { display: none; }.aurelius-chat > header { padding: 16px; }.aurelius-messages { padding: 16px; }.aurelius-choices { padding: 0 16px 10px; }.aurelius-message { max-width: 92%; } }
+@media (prefers-reduced-motion: reduce) { .aurelius-stage::before, .aurelius-intro, .aurelius-chat { animation: none; } }

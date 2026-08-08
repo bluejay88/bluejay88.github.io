@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>Studio | Anchor Web Designs</title>
     <link rel="stylesheet" href="CSS/About_Us.css">
     <link rel="stylesheet" href="CSS/legacy-refine.css">
+    <link rel="stylesheet" href="CSS/studio-cohesion.css">
+    <link rel="stylesheet" href="CSS/site-shell.css">
 </head>
 
-<body>
+<body class="studio-page">
     <header>
         <div id="logo" class="logo">
             <div class="patterns">
@@ -43,10 +45,19 @@
         </nav>
     </header>
 
-    <div class="horizontal-scroll">
+    <main class="horizontal-scroll" aria-label="Anchor Studio story">
         <div class="scroll-wrapper">
-            <section id="section1" class="scroll-section">
-                <h1 id="about2-heading"></h1>
+            <section id="section1" class="scroll-section studio-hero">
+                <div class="studio-hero__copy">
+                    <p class="studio-eyebrow">The Anchor Studio · Est. with intention</p>
+                    <h1 id="about2-heading">Studio</h1>
+                    <p class="studio-lede">A focused digital studio for brands ready to move with clarity, gravity, and measurable intent.</p>
+                    <div class="studio-actions">
+                        <a class="studio-button" href="Meet_Aurelius.html">Meet Aurelius <span aria-hidden="true">↗</span></a>
+                        <a class="studio-text-link" href="site_form7.html">Begin a project</a>
+                    </div>
+                </div>
+                <div class="studio-hero__mark" aria-hidden="true"><span>01</span><i></i><span>06</span></div>
             
             <div class="right-con">
                 <div class="round">
@@ -57,20 +68,17 @@
                 </div>
             </div>
             </section>
-            <section id="section2" class="scroll-section contact">
-                <div class="flip-container">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                        <div class="flip-card-front" style="flex: 5;">
-                            <img src="IMG/Black__White_Minimalist_Business_Logo.png" alt="Section 4 Image">
-                        </div>
-                        <div class="flip-card-back" style="flex: 5;">
-                            <h1>About Us </h1>
-                            <p>Welcome to Anchor Web Designs.Our mission is to help businesses grow by creating websites that not only look great but also drive results.</p>
-                        </div>
-                        </div>
-                    </div>
-                </div> 
+            <section id="section2" class="scroll-section contact studio-manifesto">
+                <div class="studio-statement">
+                    <p class="studio-eyebrow">The standard</p>
+                    <h2>Design with a point of view.<br>Build with a business case.</h2>
+                    <p>Anchor turns ambitious ideas into considered digital systems: identities that hold their presence, sites that guide action, and launch experiences that earn attention without asking for it.</p>
+                    <a class="studio-text-link" href="Services.html">Explore our capabilities <span aria-hidden="true">→</span></a>
+                </div>
+                <figure class="studio-insignia">
+                    <img src="IMG/Black__White_Minimalist_Business_Logo.png" alt="Anchor Web Designs anchor mark">
+                    <figcaption>Craft, strategy, and technical precision.</figcaption>
+                </figure>
                 <div class="left-con">
                     <div class="round">
                         <div id="cta">
@@ -90,23 +98,14 @@
                 </div>
                     
             </section>
-            <section id="section3" class="scroll-section contact">
-                <div class="flip-container">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                        <div class="flip-card-front" style="flex: 2;">
-                            <img src="IMG/jayla_1.png" alt="Section 4 Image">
-                        </div>
-                        <div class="flip-card-back" style="flex: 3;">
-                            <p>Jayla is a skilled web developer with a passion for creating innovative digital solutions. From coding to design, she excels at bringing ideas to life. Learn more about her achievements <a href="jayla.html">here.</a>
-</p>
-                        </div>
-                    </div>
+            <section id="section3" class="scroll-section contact studio-profile studio-profile--jayla">
+                <div class="studio-profile__media"><img src="IMG/jayla_1.png" alt="Jayla, Anchor Web Designs founder and web developer"></div>
+                <div class="studio-profile__copy">
+                    <p class="studio-eyebrow">Studio leadership · 03</p>
+                    <h2>Meet Jayla</h2>
+                    <p>Jayla brings the detail orientation of a developer to the big-picture discipline of brand building. Her work turns a client’s real advantage into a polished, responsive experience built to perform long after launch day.</p>
+                    <a class="studio-text-link" href="jayla.html">View Jayla’s profile <span aria-hidden="true">→</span></a>
                 </div>
-            </div> 
-            <div>
-                <h1>Meet Jayla</h1>
-            </div>
             <div class="left-con">
                 <div class="round">
                     <div id="cta">
@@ -125,22 +124,14 @@
                 </div>
             </div>
             </section>
-            <section id="section4" class="scroll-section contact">
-                <div class="flip-container">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                        <div class="flip-card-front" style="flex: 2;">
-                            <img src="IMG/ervin_1.png" alt="Section 4 Image">
-                        </div>
-                        <div class="flip-card-back" style="flex: 3;">
-                            <p>Ervin is a talented designer with a knack for crafting visually stunning and user-friendly interfaces. Discover more about Ervin's unique approach and portfolio <a href="ervin.html">here.</a> </p>
-                        </div>
-                    </div>
+            <section id="section4" class="scroll-section contact studio-profile studio-profile--ervin">
+                <div class="studio-profile__media"><img src="IMG/ervin_1.png" alt="Ervin, Anchor Web Designs designer"></div>
+                <div class="studio-profile__copy">
+                    <p class="studio-eyebrow">Design direction · 04</p>
+                    <h2>Meet Ervin</h2>
+                    <p>Ervin shapes the visual language that makes a brand immediately felt. With an eye for hierarchy, rhythm, and human behavior, he creates interfaces that are as easy to use as they are difficult to forget.</p>
+                    <a class="studio-text-link" href="ervin.html">View Ervin’s profile <span aria-hidden="true">→</span></a>
                 </div>
-            </div> 
-            <div>
-                <h1>Meet Ervin</h1>
-            </div>
             <div class="left-con">
                 <div class="round">
                     <div id="cta">
@@ -159,22 +150,14 @@
                 </div>
             </div>
             </section>
-            <section id="section5" class="scroll-section contact">
-                <div class="flip-container">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                        <div class="flip-card-front" style="flex: 2;">
-                            <img src="IMG/team_1.png" alt="Section 4 Image">
-                        </div>
-                        <div class="flip-card-back" style="flex: 3;">
-                            <p>Our team is a dynamic group of creative professionals dedicated to delivering exceptional results. With diverse skills and a shared passion for innovation, we collaborate to bring your vision to life. <a href="team.html">Team.</a></p>
-                        </div>
-                    </div>
+            <section id="section5" class="scroll-section contact studio-collective">
+                <div class="studio-collective__copy">
+                    <p class="studio-eyebrow">The collective · 05</p>
+                    <h2>Specialists, assembled around the work.</h2>
+                    <p>Our network combines creative direction, development, content, and growth thinking around one clear objective: make every interaction feel intentional and make every investment work harder.</p>
+                    <a class="studio-text-link" href="team.html">Meet the wider team <span aria-hidden="true">→</span></a>
                 </div>
-            </div> 
-            <div>
-                <h1>Meet the Team</h1>
-            </div>
+                <div class="studio-collective__image"><img src="IMG/team_1.png" alt="Anchor Web Designs creative team"></div>
             <div class="left-con">
                 <div class="round">
                     <div id="cta">
@@ -193,9 +176,15 @@
                 </div>
             </div>
             </section>
-            <section id="section6" class="scroll-section">
-                <div class="content">
-                    <a href="site_form7.html"><h1 id="contact2-heading">Contact Us</h1></a>
+            <section id="section6" class="scroll-section studio-closing">
+                <div class="studio-closing__content">
+                    <p class="studio-eyebrow">The next chapter · 06</p>
+                    <h2 id="contact2-heading">Build something that holds.</h2>
+                    <p>Tell Aurelius what is next. It will shape the right starting point, then connect you with the Anchor team.</p>
+                    <div class="studio-actions">
+                        <a class="studio-button" href="Meet_Aurelius.html">Meet Aurelius <span aria-hidden="true">↗</span></a>
+                        <a class="studio-text-link" href="site_form7.html">Begin a project</a>
+                    </div>
                 </div>
                 <div class="left-con">
                     <div class="round">
@@ -207,9 +196,10 @@
                 </div>
             </section>
         </div>
-    </div>
+    </main>
 
     <script src="JS/legacy-refine.js"></script>
+    <script src="JS/site-shell.js"></script>
 </body>
 
 </html>

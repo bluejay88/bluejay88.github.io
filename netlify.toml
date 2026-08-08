@@ -19,6 +19,38 @@
   to = "/Portfolio_next.html"
   status = 301
 [[redirects]]
+  from = "/studio"
+  to = "/About_Us.html"
+  status = 301
+[[redirects]]
+  from = "/meet-aurelius"
+  to = "/Meet_Aurelius.html"
+  status = 301
+[[redirects]]
+  from = "/ai-futures"
+  to = "/AI_Tools.html"
+  status = 301
+[[redirects]]
+  from = "/design-process"
+  to = "/Design_Process.html"
+  status = 301
+[[redirects]]
+  from = "/ecosystem"
+  to = "/Ecosystem.html"
+  status = 301
+[[redirects]]
+  from = "/insights"
+  to = "/Blog_Page_Heading_Animation.html"
+  status = 301
+[[redirects]]
+  from = "/podcast"
+  to = "/Podcast.html"
+  status = 301
+[[redirects]]
+  from = "/begin-project"
+  to = "/site_form7.html"
+  status = 301
+[[redirects]]
   from = "/contact"
   to = "/site_form7.html"
   status = 301
