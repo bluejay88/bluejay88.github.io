@@ -51,6 +51,10 @@
   to = "/Podcast.html"
   status = 301
 [[redirects]]
+  from = "/partners"
+  to = "/Partners.html"
+  status = 301
+[[redirects]]
   from = "/begin-project"
   to = "/site_form7.html"
   status = 301

@@ -78,6 +78,14 @@
     host.append(wrap);
   };
 
+  const addNotesLinks = () => {
+    if (!document.body.classList.contains('notes-page') || document.querySelector('script[data-anchor-notes-links]')) return;
+    const script = document.createElement('script');
+    script.src = 'JS/notes-links.js';
+    script.dataset.anchorNotesLinks = 'true';
+    document.body.append(script);
+  };
+
   const wireMenu = (nav, button) => {
     const setOpen = (open, moveFocus = false) => {
       nav.classList.toggle('is-open', open);
@@ -146,6 +154,7 @@
     if (executiveHeader) enhanceExecutiveHeader(executiveHeader); else addLegacyHeader();
     addWayfinding();
     addFilmNarration();
+    addNotesLinks();
   };
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
