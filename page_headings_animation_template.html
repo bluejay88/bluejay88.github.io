@@ -4,18 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Console Text Animation</title>
+    <title>Anchor Web Design Studios | Loading</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Anchor Web Design Studios — crafting exceptional digital experiences through website design, UI/UX design, digital marketing, branding, and logo design.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://anchorwebdesigns.com/page_headings_animation_template.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Anchor Web Design Studios">
+    <meta property="og:description" content="Crafting exceptional digital experiences through website design, UI/UX, digital marketing, branding, and logo design.">
+    <meta property="og:url" content="https://anchorwebdesigns.com/page_headings_animation_template.html">
+    <meta property="og:site_name" content="Anchor Web Design Studios">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Anchor Web Design Studios">
+    <meta name="twitter:description" content="Crafting exceptional digital experiences.">
+
+    <!-- SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2308080C'/%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' fill='%236366F1' font-family='Georgia,serif' font-size='14' font-weight='700'%3E%26lt;a%26gt;%3C/text%3E%3C/svg%3E">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="CSS/anchor-system.css">
+    <link rel="stylesheet" href="CSS/anchor-core.css">
     <link rel="stylesheet" href="CSS/page_headings_animation_template.css">
 </head>
 
 <body>
-    <div class="console-container">
-        <span id="text"></span>
-        <div class="console-underscore" id="console">&#95;</div>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <main class="intro-page" id="main" role="main" aria-label="Anchor Web Design Studios introduction">
+        <div class="console-container" aria-live="polite" aria-atomic="true">
+            <span id="text"></span>
+            <div class="console-underscore" id="console" aria-hidden="true">&#95;</div>
+        </div>
 
-    <button id="skipButton" class="skip-button">SKIP</button>
+        <button id="skipButton" class="skip-button" aria-label="Skip introduction and continue to website">Skip Intro</button>
+    </main>
 
+    <script src="JS/anchor-core.js"></script>
     <script src="JS/page_headings_animation_template.js"></script>
 </body>
 

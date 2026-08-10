@@ -3,22 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
+    <title>Services | Anchor Web Design Studios</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Explore Anchor Web Design Studios' services: responsive web design, digital marketing, branding, SEO, and reliable hosting. Tailored solutions that help your business grow online.">
+    <meta name="keywords" content="web design services, responsive web design, digital marketing, branding, SEO, SEM, web hosting, UI/UX design, Anchor Web Design">
+    <meta name="author" content="Anchor Web Design Studios">
+    <link rel="canonical" href="https://anchorwebdesigns.com/Services.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Services | Anchor Web Design Studios">
+    <meta property="og:description" content="Responsive web design, digital marketing, branding, SEO, and reliable hosting — tailored solutions that help your business grow online.">
+    <meta property="og:url" content="https://anchorwebdesigns.com/Services.html">
+    <meta property="og:image" content="IMG/24.png">
+    <meta property="og:site_name" content="Anchor Web Design Studios">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Services | Anchor Web Design Studios">
+    <meta name="twitter:description" content="Responsive web design, digital marketing, branding, SEO, and reliable hosting — tailored solutions that help your business grow online.">
+    <meta name="twitter:image" content="IMG/24.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Design System + Core CSS -->
+    <link rel="stylesheet" href="CSS/anchor-system.css">
+    <link rel="stylesheet" href="CSS/anchor-core.css">
+    <!-- Page CSS -->
     <link rel="stylesheet" href="CSS/Services.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Web Design, Digital Marketing, Branding, SEO, Web Hosting",
+      "provider": {
+        "@type": "Organization",
+        "name": "Anchor Web Design Studios",
+        "url": "https://anchorwebdesigns.com",
+        "logo": "https://anchorwebdesigns.com/IMG/Black__White_Minimalist_Business_Logo.png",
+        "description": "Anchor Web Design Studios crafts modern, responsive websites and delivers digital marketing, branding, and hosting solutions that help businesses grow."
+      },
+      "areaServed": "Worldwide",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Anchor Web Design Studios Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Responsive Web Design",
+              "description": "Responsive, modern, and user-friendly websites that look great on every device."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Digital Marketing",
+              "description": "Reach more customers and drive growth with smart, data-driven digital marketing."
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Branding & Logo Design",
+              "description": "Craft a powerful brand identity and logo that sets you apart and resonates with your audience."
+            }
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 <body id="servicesBody">
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="anchor-header">
         <div id="logo" class="logo">
             <div class="patterns">
-                <a href="page_headings_animation_template.html?target=index.html">
-                    <svg width="100" height="50">
+                <a href="page_headings_animation_template.html?target=index.html" aria-label="Anchor Web Design home">
+                    <svg width="100" height="50" role="img" aria-label="Anchor Web Design logo">
                         <defs>
                             <pattern id="polka-dots" x="10" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
                                 <circle fill="#ffffff" cx="25" cy="25" r="3"></circle>
                             </pattern>
-                            <style>
-                                @import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
-                            </style>
                         </defs>
                         <rect x="0" y="0" width="100%" height="100%" fill="black"></rect>
                         <text x="50%" y="60%" text-anchor="middle" fill="white">&lt;a&gt;</text>
@@ -26,45 +100,47 @@
                 </a>
             </div>
         </div>
-        <nav>
+        <nav class="anchor-nav" aria-label="Primary navigation">
             <div class="hamburger-menu">
-                <div class="hamburger-icon" onclick="toggleMenu()">☰</div>
-              </div>
+                <button class="hamburger-icon" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
             <ul class="nav-links">
                 <li><a href="Faq_Page_Heading_Animation.html">FAQ</a></li>
                 <li><a href="Blog_Page_Heading_Animation.html">Blog</a></li>
                 <li><a href="index.html#section5">Portfolio</a></li>
                 <li><a href="index.html#section4">Contact Us</a></li>
-                <li><a href="index.html#section3">About Us</a></li>
-                <li><a href="index.html#section2">Services</a></li>
-                
+                <li><a href="About_Us.html">About Us</a></li>
+                <li><a href="Services.html" aria-current="page">Services</a></li>
             </ul>
         </nav>
     </header>
 
+    <main id="main-content">
     <div class="horizontal-scroll">
         <div class="scroll-wrapper">
-            <section id="section1" class="scroll-section">
+            <section id="section1" class="scroll-section" aria-label="Services heading">
                 <div class="content">
                     <div class="console-container">
-                        <span id="text"></span>
-                        <div class="console-underscore" id="console">&#95;</div>
+                        <span id="text" aria-label="Services we offer"></span>
+                        <div class="console-underscore" id="console" aria-hidden="true">&#95;</div>
                     </div>
                 </div>
                 <div class="right-con">
                     <div class="round">
-                        <div id="cta1">
+                        <div id="cta1" role="button" tabindex="0" aria-label="Go to next section">
                             <div class="arrow primera next"></div>
                             <div class="arrow segunda next"></div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="section2" class="scroll-section">
+            <section id="section2" class="scroll-section" aria-label="Web Design services">
                 <div class="content">
-                    <div class="serviceContainers" id="serviceContainer1">
+                    <div class="serviceContainers reveal-scale" id="serviceContainer1">
                         <div class="imgBx" id="imgBx1">
-                            <img src="IMG/24.png" alt="Web Design Image" class="product-image" id="product-image1">
+                            <img src="IMG/24.png" alt="Responsive web design example" class="product-image" id="product-image1">
                         </div>
                         <div class="details" id="details1">
                             <div class="content" id="content1">
@@ -72,34 +148,34 @@
                                     <span id="product-subtitle1">Web Development Collection</span>
                                 </h2>
                                 <p id="description-theme1-1" class="product-description">
-                                    We create responsive, modern, and user-friendly websites that look great on all devices.
+                                    We craft responsive, modern, and user-friendly websites that look flawless on every device — from phones to desktops. Every build is performance-optimized, accessible, and tailored to your brand.
                                 </p>
                                 <p id="description-theme2-1" class="product-description" style="display: none;">
-                                    Our creative web designs bring your brand's story to life.
+                                    Our creative web designs bring your brand's story to life with bold visuals, thoughtful typography, and interactions that engage visitors and leave a lasting impression.
                                 </p>
                                 <p id="description-theme3-1" class="product-description" style="display: none;">
-                                    Our e-commerce web designs are built to convert.
+                                    Our e-commerce web designs are built to convert — secure checkout flows, intuitive product pages, and a frictionless buying experience that turns visitors into customers.
                                 </p>
                                 <p class="product-colors" id="product-colors1">Website Design Services: <br>
                                     <span class="theme1 active" id="theme1-1" data-color-primary="#001F3F" data-color-sec="#0074D9"
                                         data-pic="IMG/24.png" data-hover-pic="IMG/25.png" data-text="Responsive Web Design"
-                                        data-desc="#description-theme1-1"></span>
+                                        data-desc="#description-theme1-1" role="button" tabindex="0" aria-label="Responsive Web Design theme"></span>
                                     <span class="theme2" id="theme2-1" data-color-primary="#85144b" data-color-sec="#FF4136"
                                         data-pic="IMG/33.png" data-hover-pic="IMG/31.png" data-text="Creative Web Design"
-                                        data-desc="#description-theme2-1"></span>
+                                        data-desc="#description-theme2-1" role="button" tabindex="0" aria-label="Creative Web Design theme"></span>
                                     <span class="theme3" id="theme3-1" data-color-primary="#2ECC40" data-color-sec="#01FF70"
                                         data-pic="IMG/27.png" data-hover-pic="IMG/28.png" data-text="E-Commerce Web Design"
-                                        data-desc="#description-theme3-1"></span>
+                                        data-desc="#description-theme3-1" role="button" tabindex="0" aria-label="E-Commerce Web Design theme"></span>
                                 </p>
                                 <h3 id="product-price1">$ Contact Us</h3>
-                                <button id="contact-button1" onclick="location.href='site_form7.html'">Contact Us</button>
+                                <button id="contact-button1" class="btn btn-primary" onclick="location.href='site_form7.html'">Contact Us</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="left-con">
                     <div class="round back">
-                        <div id="cta2">
+                        <div id="cta2" role="button" tabindex="0" aria-label="Go to previous section">
                             <div class="arrow primera previous"></div>
                             <div class="arrow segunda previous"></div>
                         </div>
@@ -107,18 +183,18 @@
                 </div>
                 <div class="right-con">
                     <div class="round">
-                        <div id="cta3">
+                        <div id="cta3" role="button" tabindex="0" aria-label="Go to next section">
                             <div class="arrow primera next"></div>
                             <div class="arrow segunda next"></div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="section3" class="scroll-section">
+            <section id="section3" class="scroll-section" aria-label="Digital Marketing services">
                 <div class="content">
-                    <div class="serviceContainers" id="serviceContainer2">
+                    <div class="serviceContainers reveal-scale" id="serviceContainer2">
                         <div class="imgBx" id="imgBx2">
-                            <img src="IMG/24.png" alt="Web Design Image" class="product-image" id="product-image2">
+                            <img src="IMG/25.png" alt="Digital marketing strategy example" class="product-image" id="product-image2">
                         </div>
                         <div class="details" id="details2">
                             <div class="content" id="content2">
@@ -126,35 +202,34 @@
                                     <span id="product-subtitle2">Digital Marketing For All!</span>
                                 </h2>
                                 <p id="description-theme1-2" class="product-description">
-                                   Reach More Customers and Drive Growth with Smart Digital Marketing!
+                                    Reach more customers and drive growth with smart, data-driven digital marketing. We build campaigns grounded in research and optimized for measurable returns.
                                 </p>
                                 <p id="description-theme2-2" class="product-description" style="display: none;">
-                                    For social media management and content marketing, we have the tools and expertise to elevate your brand and achieve your business goals.
-
+                                    From social media management to content marketing, we have the tools and expertise to elevate your brand and achieve your business goals across every channel.
                                 </p>
                                 <p id="description-theme3-2" class="product-description" style="display: none;">
-                                   Together We Discuss How To Supercharge Your Digital Marketing Strategy!
+                                    Let's supercharge your digital marketing strategy together — auditing your current efforts, identifying gaps, and building a roadmap that compounds results over time.
                                 </p>
                                 <p class="product-colors" id="product-colors2">Digital Marketing Services: <br>
                                     <span class="theme1 active" id="theme1-2" data-color-primary="#001F3F" data-color-sec="#0074D9"
                                         data-pic="IMG/24.png" data-hover-pic="IMG/25.png" data-text="Digital Marketing"
-                                        data-desc="#description-theme1-2"></span>
+                                        data-desc="#description-theme1-2" role="button" tabindex="0" aria-label="Digital Marketing theme"></span>
                                     <span class="theme2" id="theme2-2" data-color-primary="#85144b" data-color-sec="#FF4136"
                                         data-pic="IMG/33.png" data-hover-pic="IMG/31.png" data-text="Social Media Management"
-                                        data-desc="#description-theme2-2"></span>
+                                        data-desc="#description-theme2-2" role="button" tabindex="0" aria-label="Social Media Management theme"></span>
                                     <span class="theme3" id="theme3-2" data-color-primary="#2ECC40" data-color-sec="#01FF70"
                                         data-pic="IMG/27.png" data-hover-pic="IMG/28.png" data-text="Reach Your Audience"
-                                        data-desc="#description-theme3-2"></span>
+                                        data-desc="#description-theme3-2" role="button" tabindex="0" aria-label="Reach Your Audience theme"></span>
                                 </p>
                                 <h3 id="product-price2">$ Contact Us</h3>
-                                <button id="contact-button2" onclick="location.href='site_form7.html'">Contact Us</button>
+                                <button id="contact-button2" class="btn btn-primary" onclick="location.href='site_form7.html'">Contact Us</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="left-con">
                     <div class="round back">
-                        <div id="cta4">
+                        <div id="cta4" role="button" tabindex="0" aria-label="Go to previous section">
                             <div class="arrow primera previous"></div>
                             <div class="arrow segunda previous"></div>
                         </div>
@@ -162,18 +237,18 @@
                 </div>
                 <div class="right-con">
                     <div class="round">
-                        <div id="cta5">
+                        <div id="cta5" role="button" tabindex="0" aria-label="Go to next section">
                             <div class="arrow primera next"></div>
                             <div class="arrow segunda next"></div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="section4" class="scroll-section">
+            <section id="section4" class="scroll-section" aria-label="Additional services">
                 <div class="content">
-                    <div class="serviceContainers" id="serviceContainer3">
+                    <div class="serviceContainers reveal-scale" id="serviceContainer3">
                         <div class="imgBx" id="imgBx3">
-                            <img src="IMG/24.png" alt="Web Design Image" class="product-image" id="product-image3">
+                            <img src="IMG/33.png" alt="Branding and additional services example" class="product-image" id="product-image3">
                         </div>
                         <div class="details" id="details3">
                             <div class="content" id="content3">
@@ -181,34 +256,34 @@
                                     <span id="product-subtitle3">What Else We Do!</span>
                                 </h2>
                                 <p id="description-theme1-3" class="product-description">
-                                    Craft a powerful brand identity and logo that sets you apart and resonates with your audience.
+                                    Craft a powerful brand identity and logo that sets you apart and resonates with your audience — built on strategy, not just aesthetics.
                                 </p>
                                 <p id="description-theme2-3" class="product-description" style="display: none;">
-                                    Dominate search results and maximize your visibility with our tailored SEO and SEM solutions.
+                                    Dominate search results and maximize your visibility with tailored SEO and SEM solutions designed to put your business in front of the right people at the right time.
                                 </p>
                                 <p id="description-theme3-3" class="product-description" style="display: none;">
-                                    Keep your website running smoothly with our reliable hosting and maintenance services.
+                                    Keep your website running smoothly with our reliable hosting and maintenance services — security updates, backups, and performance monitoring handled for you.
                                 </p>
                                 <p class="product-colors" id="product-colors3">Check Out What Else We Do: <br>
                                     <span class="theme1 active" id="theme1-3" data-color-primary="#001F3F" data-color-sec="#0074D9"
                                         data-pic="IMG/24.png" data-hover-pic="IMG/25.png" data-text="Branding & Logo Design"
-                                        data-desc="#description-theme1-3"></span>
+                                        data-desc="#description-theme1-3" role="button" tabindex="0" aria-label="Branding and Logo Design theme"></span>
                                     <span class="theme2" id="theme2-3" data-color-primary="#85144b" data-color-sec="#FF4136"
                                         data-pic="IMG/33.png" data-hover-pic="IMG/31.png" data-text="SEO & SEM"
-                                        data-desc="#description-theme2-3"></span>
+                                        data-desc="#description-theme2-3" role="button" tabindex="0" aria-label="SEO and SEM theme"></span>
                                     <span class="theme3" id="theme3-3" data-color-primary="#2ECC40" data-color-sec="#01FF70"
                                         data-pic="IMG/27.png" data-hover-pic="IMG/28.png" data-text="Web Hosting & Maintenance"
-                                        data-desc="#description-theme3-3"></span>
+                                        data-desc="#description-theme3-3" role="button" tabindex="0" aria-label="Web Hosting and Maintenance theme"></span>
                                 </p>
                                 <h3 id="product-price3">$ Contact Us</h3>
-                                <button id="contact-button3" onclick="location.href='site_form7.html'">Contact Us</button>
+                                <button id="contact-button3" class="btn btn-primary" onclick="location.href='site_form7.html'">Contact Us</button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="left-con">
                     <div class="round back">
-                        <div id="cta6">
+                        <div id="cta6" role="button" tabindex="0" aria-label="Go to previous section">
                             <div class="arrow primera previous"></div>
                             <div class="arrow segunda previous"></div>
                         </div>
@@ -216,20 +291,20 @@
                 </div>
                 <div class="right-con">
                     <div class="round">
-                        <div id="cta7">
+                        <div id="cta7" role="button" tabindex="0" aria-label="Go to next section">
                             <div class="arrow primera next"></div>
                             <div class="arrow segunda next"></div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="section5" class="scroll-section">
+            <section id="section5" class="scroll-section" aria-label="Contact us">
                 <div class="content">
                     <a href="site_form7.html"><h1 id="contact2-heading">Contact Us</h1></a>
                 </div>
                 <div class="left-con">
                     <div class="round back">
-                        <div id="cta8">
+                        <div id="cta8" role="button" tabindex="0" aria-label="Go to previous section">
                             <div class="arrow primera previous"></div>
                             <div class="arrow segunda previous"></div>
                         </div>
@@ -238,8 +313,57 @@
             </section>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" 
+    </main>
+
+    <footer class="anchor-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>&lt;a&gt; Anchor Web Design</h3>
+                <p>Crafting modern, responsive websites that help businesses grow. Design, development, and digital strategy under one roof.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Blog_Page_Heading_Animation.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="Services.html#section2">Web Design</a></li>
+                    <li><a href="Services.html#section3">Digital Marketing</a></li>
+                    <li><a href="Services.html#section4">Branding &amp; Logo</a></li>
+                    <li><a href="Services.html#section4">SEO &amp; Hosting</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="site_form7.html">Contact</a></li>
+                    <li><a href="Faq_Page_Heading_Animation.html">FAQ</a></li>
+                    <li><a href="index.html#section5">Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Anchor Web Design Studios. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">TW</a>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="LinkedIn">LI</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery (required for theme switching) -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- Core JS -->
+    <script src="JS/anchor-core.js"></script>
+    <!-- Page JS -->
     <script src="JS/services.js"></script>
 </body>
 </html>

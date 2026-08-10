@@ -3,31 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Page</title>
+    <title>FAQ | Anchor Web Design Studios</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Find answers to common questions about Anchor Web Design Studios — our services, pricing, timelines, maintenance, e-commerce solutions, SEO, security, and how to get started.">
+    <meta name="keywords" content="web design FAQ, website design cost, website maintenance, responsive design, ecommerce solutions, SEO services">
+    <meta name="author" content="Anchor Web Design Studios">
+    <link rel="canonical" href="https://anchorwebdesigns.com/Faq_Page_Heading_Animation.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FAQ | Anchor Web Design Studios">
+    <meta property="og:description" content="Find answers to common questions about our web design services, pricing, timelines, and more.">
+    <meta property="og:url" content="https://anchorwebdesigns.com/Faq_Page_Heading_Animation.html">
+    <meta property="og:site_name" content="Anchor Web Design Studios">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FAQ | Anchor Web Design Studios">
+    <meta name="twitter:description" content="Find answers to common questions about our web design services, pricing, timelines, and more.">
+
+    <!-- SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2308080C'/%3E%3Ctext x='16' y='23' text-anchor='middle' fill='%236366F1' font-family='monospace' font-size='18' font-weight='bold'%3Ea%3C/text%3E%3C/svg%3E">
+
+    <!-- Design System + Core -->
+    <link rel="stylesheet" href="CSS/anchor-system.css">
+    <link rel="stylesheet" href="CSS/anchor-core.css">
     <link rel="stylesheet" href="CSS/Faq_Page_Heading_Animation.css">
 </head>
 <body>
-    <header>
-        <div id="logo" class="logo">
-            <div class="patterns">
-                <a href="page_headings_animation_template.html?target=index.html"><svg width="100" height="50">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="anchor-header">
+        <div class="logo">
+            <a href="index.html" aria-label="Anchor Web Design Studios — Home">
+                <svg width="100" height="50" role="img" aria-label="Anchor Web Designs logo">
                     <defs>
                         <pattern id="polka-dots" x="10" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
                             <circle fill="#ffffff" cx="25" cy="25" r="3"></circle>
                         </pattern>
-                        <style>
-                            @import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
-                        </style>
                     </defs>
                     <rect x="0" y="0" width="100%" height="100%" fill="black"></rect>
                     <text x="50%" y="60%" text-anchor="middle" fill="white">&lt;a&gt;</text>
-                </svg></a>
-            </div>
+                </svg>
+            </a>
         </div>
-        <nav>
+        <nav class="anchor-nav" aria-label="Main navigation">
             <div class="hamburger-menu">
-                <div class="hamburger-icon" onclick="toggleMenu()">☰</div>
-              </div>
+                <div class="hamburger-icon" role="button" aria-label="Toggle navigation menu" tabindex="0">☰</div>
+            </div>
             <ul class="nav-links">
                 <li><a href="Faq_Page_Heading_Animation.html">FAQ</a></li>
                 <li><a href="Blog_Page_Heading_Animation.html">Blog</a></li>
@@ -35,55 +59,173 @@
                 <li><a href="index.html#section4">Contact Us</a></li>
                 <li><a href="index.html#section3">About Us</a></li>
                 <li><a href="index.html#section2">Services</a></li>
-                
             </ul>
         </nav>
     </header>
-    <div class="faq-container">
-        <h1>FAQ</h1>
-        <div class="faq-item">
-            <div class="faq-question">1. What services do you offer?</div>
-            <div class="faq-answer">We offer a range of services including website design, development, SEO, and digital marketing.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">2. How much does a website design cost?</div>
-            <div class="faq-answer">The cost of website design depends on various factors such as complexity, features, and design. We provide custom quotes based on your requirements.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">3. How long does it take to design a website?</div>
-            <div class="faq-answer">The timeline for designing a website can vary, but typically it takes between 4 to 8 weeks depending on the project's complexity.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">4. Do you provide website maintenance services?</div>
-            <div class="faq-answer">Yes, we offer ongoing website maintenance services to ensure your site remains updated and functional.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">5. Can you redesign my existing website?</div>
-            <div class="faq-answer">Absolutely! We can work with your existing site to redesign and improve its look and functionality.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">6. What is responsive design?</div>
-            <div class="faq-answer">Responsive design ensures that your website looks and functions well on all devices, including desktops, tablets, and smartphones.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">7. Do you offer e-commerce solutions?</div>
-            <div class="faq-answer">Yes, we provide e-commerce solutions that include shopping cart functionality, product management, and payment gateway integration.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">8. How do you handle SEO?</div>
-            <div class="faq-answer">We incorporate SEO best practices into the design and development of your website to help improve its visibility on search engines.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">9. Will my website be secure?</div>
-            <div class="faq-answer">Yes, we implement security measures such as SSL certificates, secure hosting, and regular updates to protect your website.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">10. How can I get started with your services?</div>
-            <div class="faq-answer">To get started, simply contact us through our website or schedule a consultation to discuss your project requirements.</div>
-        </div>
-    </div>
 
+    <main id="main-content">
+        <div class="faq-hero reveal">
+            <h1 class="faq-title gradient-text">Frequently Asked Questions</h1>
+            <p class="faq-subtitle">Everything you need to know about our web design services</p>
+        </div>
+
+        <div class="faq-search-wrapper reveal" data-delay="1">
+            <input
+                type="text"
+                id="faq-search"
+                class="faq-search-input"
+                placeholder="Search questions..."
+                aria-label="Search FAQ questions"
+                autocomplete="off"
+            >
+            <span class="faq-search-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </span>
+        </div>
+
+        <div class="faq-container reveal" data-delay="2">
+            <div class="faq-item glass">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-1">
+                    <span class="faq-question-text">What services do you offer?</span>
+                    <span class="faq-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-1" role="region">
+                    <p>We offer a range of services including website design, development, SEO, and digital marketing.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-2">
+                    <span class="faq-question-text">How much does a website design cost?</span>
+                    <span class="faq-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-2" role="region">
+                    <p>The cost of website design depends on various factors such as complexity, features, and design. We provide custom quotes based on your requirements.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-3">
+                    <span class="faq-question-text">How long does it take to design a website?</span>
+                    <span class="faq-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-3" role="region">
+                    <p>The timeline for designing a website can vary, but typically it takes between 4 to 8 weeks depending on the project's complexity.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-4">
+                    <span class="faq-question-text">Do you provide website maintenance services?</span>
+                    <span class="faq-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-4" role="region">
+                    <p>Yes, we offer ongoing website maintenance services to ensure your site remains updated and functional.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-5">
+                    <span class="faq-question-text">Can you redesign my existing website?</span>
+                    <span class="faq-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-5" role="region">
+                    <p>Absolutely! We can work with your existing site to redesign and improve its look and functionality.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-6">
+                    <span class="faq-question-text">What is responsive design?</span>
+                    <span class="faq-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-6" role="region">
+                    <p>Responsive design ensures that your website looks and functions well on all devices, including desktops, tablets, and smartphones.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-7">
+                    <span class="faq-question-text">Do you offer e-commerce solutions?</span>
+                    <span class="faq-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-7" role="region">
+                    <p>Yes, we provide e-commerce solutions that include shopping cart functionality, product management, and payment gateway integration.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-8">
+                    <span class="faq-question-text">How do you handle SEO?</span>
+                    <span class="faq-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-8" role="region">
+                    <p>We incorporate SEO best practices into the design and development of your website to help improve its visibility on search engines.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-9">
+                    <span class="faq-question-text">Will my website be secure?</span>
+                    <span class="faq-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-9" role="region">
+                    <p>Yes, we implement security measures such as SSL certificates, secure hosting, and regular updates to protect your website.</p>
+                </div>
+            </div>
+
+            <div class="faq-item glass">
+                <button class="faq-question" aria-expanded="false" aria-controls="faq-answer-10">
+                    <span class="faq-question-text">How can I get started with your services?</span>
+                    <span class="faq-toggle" aria-hidden="true"></span>
+                </button>
+                <div class="faq-answer" id="faq-answer-10" role="region">
+                    <p>To get started, simply contact us through our website or schedule a consultation to discuss your project requirements.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="faq-no-results" id="faq-no-results" style="display: none;">No matching questions found. Try a different search term.</p>
+    </main>
+
+    <footer class="anchor-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>Anchor Web Designs</h3>
+                <p>Crafting exceptional digital experiences with modern web design, development, and digital marketing solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li><a href="Portfolio_next.html">Portfolio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="Blog_Page_Heading_Animation.html">Blog</a></li>
+                    <li><a href="Faq_Page_Heading_Animation.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="site_form7.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Anchor Web Design Studios. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="JS/anchor-core.js"></script>
     <script src="JS/Faq_Page_Heading_Animation.js"></script>
 </body>
-
 </html>

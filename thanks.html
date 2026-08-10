@@ -3,45 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank you!</title>
-    <link rel="stylesheet" href="CSS/pissy_4.css">
+    <title>Thank You | Anchor Web Design Studios</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Thank you for contacting Anchor Web Design Studios. Your consultation request has been received and our team will be in touch shortly.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://anchorwebdesigns.com/thanks.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Thank You | Anchor Web Design Studios">
+    <meta property="og:description" content="Your consultation request has been received. Our team will be in touch shortly.">
+    <meta property="og:url" content="https://anchorwebdesigns.com/thanks.html">
+    <meta property="og:site_name" content="Anchor Web Design Studios">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Thank You | Anchor Web Design Studios">
+    <meta name="twitter:description" content="Your consultation request has been received.">
+
+    <!-- SVG Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2308080C'/%3E%3Ctext x='50%25' y='62%25' text-anchor='middle' fill='%236366F1' font-family='Georgia,serif' font-size='14' font-weight='700'%3E%26lt;a%26gt;%3C/text%3E%3C/svg%3E">
+
+    <!-- Design System -->
+    <link rel="stylesheet" href="CSS/anchor-system.css">
+    <link rel="stylesheet" href="CSS/anchor-core.css">
     <link rel="stylesheet" href="CSS/thanks.css">
-    
 </head>
 <body>
-    <div id="logo" class="logo">
-            <div class="patterns">
-                <a href="index.html"><svg width="100" height="50">
-                    <defs>
-                        <pattern id="polka-dots" x="10" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-                            <circle fill="#ffffff" cx="25" cy="25" r="3"></circle>
-                        </pattern>
-                        <style>
-                            @import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
-                        </style>
-                    </defs>
-                    <rect x="0" y="0" width="100%" height="100%" fill="black"></rect>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Confetti canvas -->
+    <canvas id="confetti" aria-hidden="true"></canvas>
+
+    <main id="main" class="thanks-page">
+        <div class="logo-wrap">
+            <a href="index.html" aria-label="Anchor Web Design Studios home">
+                <svg width="100" height="50" aria-hidden="true">
+                    <rect x="0" y="0" width="100%" height="100%" fill="transparent"></rect>
                     <text x="50%" y="60%" text-anchor="middle" fill="white">&lt;a&gt;</text>
-                </svg></a>
-            </div>
+                </svg>
+            </a>
         </div>
 
-    <div class="thanks">
-        <h1>Thank You for Reaching Out!</h1>
+        <div class="thanks glass-strong reveal-scale">
+            <!-- Animated checkmark -->
+            <div class="checkmark-wrap" aria-hidden="true">
+                <svg class="checkmark" viewBox="0 0 52 52">
+                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="checkmark-check" fill="none" d="M14 27l8 8 16-16"/>
+                </svg>
+            </div>
 
-           <p>
-            We appreciate you taking the time to connect with us. Your request for a consultation has been successfully submitted, and our team is excited to explore how we can bring your vision to life.
+            <h1 class="gradient-text">Thank You!</h1>
+            <p class="thanks-subtitle">Your request has been received</p>
 
-            We will review your information and get back to you shortly to schedule a time that works best for you. In the meantime, feel free to browse our portfolio and learn more about our approach to creating exceptional digital experiences.
+            <p class="thanks-message">
+                We appreciate you taking the time to connect with us. Your request for a consultation
+                has been successfully submitted, and our team is excited to explore how we can bring
+                your vision to life.
+            </p>
+            <p class="thanks-message">
+                We will review your information and get back to you shortly to schedule a time that
+                works best for you. In the meantime, feel free to browse our portfolio and learn more
+                about our approach to creating exceptional digital experiences.
+            </p>
 
-            Thank you for considering us for your project. We look forward to collaborating with you!
+            <p class="thanks-signature">Warm regards,<br><span class="signature-name">The Anchor Web Design Team</span></p>
 
-            Warm regards,
+            <div class="thanks-cta">
+                <a href="Portfolio_next.html" class="btn btn-primary"><span>View Portfolio</span></a>
+                <a href="index.html" class="btn btn-outline"><span>Back Home</span></a>
+            </div>
+        </div>
+    </main>
 
-                The Anchor Web Design Team
-           </p>
+    <script src="JS/anchor-core.js"></script>
+    <script>
+    /* ---------- Confetti Animation ---------- */
+    (function () {
+        var canvas = document.getElementById('confetti');
+        if (!canvas) return;
+        var ctx = canvas.getContext('2d');
+        var particles = [];
+        var colors = ['#6366F1', '#EC4899', '#06B6D4', '#10B981', '#F59E0B', '#818CF8'];
+        var animationId = null;
 
-           <a href="Portfolio_next.html"><button>View Portfolio</button></a>
-    </div>
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        function createParticle(x, y) {
+            return {
+                x: x,
+                y: y,
+                vx: (Math.random() - 0.5) * 12,
+                vy: Math.random() * -14 - 4,
+                gravity: 0.4,
+                size: Math.random() * 8 + 4,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                rotation: Math.random() * 360,
+                rotationSpeed: (Math.random() - 0.5) * 12,
+                life: 1,
+                shape: Math.random() > 0.5 ? 'rect' : 'circle'
+            };
+        }
+
+        function burst() {
+            var cx = canvas.width / 2;
+            var cy = canvas.height / 3;
+            for (var i = 0; i < 120; i++) {
+                particles.push(createParticle(cx + (Math.random() - 0.5) * 100, cy));
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles = particles.filter(function (p) {
+                p.vy += p.gravity;
+                p.x += p.vx;
+                p.y += p.vy;
+                p.rotation += p.rotationSpeed;
+                p.life -= 0.008;
+
+                if (p.life <= 0 || p.y > canvas.height + 50) return false;
+
+                ctx.save();
+                ctx.globalAlpha = Math.max(p.life, 0);
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.rotation * Math.PI / 180);
+                ctx.fillStyle = p.color;
+                if (p.shape === 'rect') {
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.6);
+                } else {
+                    ctx.beginPath();
+                    ctx.arc(0, 0, p.size / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.restore();
+                return true;
+            });
+
+            if (particles.length > 0) {
+                animationId = requestAnimationFrame(draw);
+            } else {
+                cancelAnimationFrame(animationId);
+            }
+        }
+
+        // Respect reduced motion
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setTimeout(burst, 300);
+            setTimeout(burst, 800);
+            draw();
+        }
+    })();
+    </script>
 </body>
 </html>
