@@ -15,6 +15,10 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 [[redirects]]
+  from = "/favicon.ico"
+  to = "/IMG/Black__White_Minimalist_Business_Logo.png"
+  status = 200
+[[redirects]]
   from = "/services"
   to = "/Services.html"
   status = 301
