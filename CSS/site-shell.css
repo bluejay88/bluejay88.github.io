@@ -1,7 +1,8 @@
+@import url('executive-refinements.css');
 /* Shared wayfinding layer for the restored Anchor pages. */
 :root{--anchor-shell-ink:#090906;--anchor-shell-ivory:#faf5e9;--anchor-shell-gold:#e4bd78;--anchor-shell-line:rgba(250,245,233,.28)}
 .site-header.anchor-shell-managed,.anchor-shell{height:68px;padding-left:36px;padding-right:36px}
-.anchor-shell-managed .anchor-nav,.anchor-shell .anchor-nav{flex:1;justify-content:flex-start;margin-left:18px;gap:clamp(16px,1.6vw,26px)}
+.anchor-shell-managed .anchor-nav,.anchor-shell .anchor-nav{flex:1;justify-content:flex-start;margin-left:16px;gap:clamp(11px,1vw,18px)}
 .anchor-shell-managed .anchor-nav .anchor-nav-cta,.anchor-shell .anchor-nav .anchor-nav-cta{margin-left:auto}
 .anchor-shell-managed .anchor-nav a,.anchor-shell .anchor-nav a{font-size:10px}
 .anchor-shell-managed .anchor-nav{display:flex;align-items:center}
@@ -17,7 +18,7 @@
 .anchor-shell__mark{display:flex;align-items:center;gap:10px;color:var(--anchor-shell-ivory);font:600 10px/1 var(--sans,'Manrope',sans-serif);letter-spacing:.2em;text-decoration:none;text-transform:uppercase}
 .anchor-shell__crest{display:grid;place-items:center;width:31px;height:31px;border:1px solid var(--anchor-shell-gold);color:var(--anchor-shell-gold);font:600 15px/1 var(--serif,'Cinzel',serif);transform:rotate(45deg)}
 .anchor-shell__crest b{font-weight:inherit;transform:rotate(-45deg)}
-.anchor-shell .anchor-nav{display:flex;align-items:center;gap:clamp(13px,2vw,28px)}
+.anchor-shell .anchor-nav{display:flex;align-items:center}
 .anchor-shell .anchor-nav a{color:var(--anchor-shell-ivory);font:600 9px/1 var(--sans,'Manrope',sans-serif);letter-spacing:.12em;text-decoration:none;text-transform:uppercase;white-space:nowrap}
 .anchor-shell .anchor-nav a:hover,.anchor-shell .anchor-nav a[aria-current="page"]{color:var(--anchor-shell-gold)}
 .anchor-shell .anchor-nav .anchor-nav-cta{padding:9px 11px;border:1px solid rgba(199,164,102,.8);color:var(--anchor-shell-gold)}
