@@ -10,7 +10,7 @@
 .anchor-shell-managed .anchor-nav a:hover,.anchor-shell-managed .anchor-nav a[aria-current="page"]{color:var(--anchor-shell-gold)}
 .anchor-shell-managed .anchor-nav .anchor-nav-cta{border:1px solid rgba(199,164,102,.78);padding:10px 13px;color:var(--anchor-shell-gold)}
 .anchor-shell-managed .anchor-nav .anchor-nav-cta:hover{background:var(--anchor-shell-gold);color:var(--anchor-shell-ink)}
-.anchor-shell-managed .anchor-menu{display:none;background:transparent;border:0;color:var(--anchor-shell-ivory);font:600 10px/1 var(--sans,'Manrope',sans-serif);letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+.anchor-shell-managed .anchor-menu,.anchor-shell .anchor-menu{display:none;background:transparent;border:0;color:var(--anchor-shell-ivory);font:600 10px/1 var(--sans,'Manrope',sans-serif);letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
 .anchor-wayfinding{position:fixed;z-index:80;right:18px;bottom:18px;display:inline-flex;align-items:center;gap:9px;max-width:calc(100vw - 36px);padding:10px 14px 10px 10px;background:rgba(10,9,6,.92);border:1px solid rgba(199,164,102,.6);box-shadow:0 14px 35px rgba(0,0,0,.28);backdrop-filter:blur(14px);color:var(--anchor-shell-ivory);font:600 10px/1 var(--sans,'Manrope',sans-serif);letter-spacing:.12em;text-decoration:none;text-transform:uppercase;transition:transform .25s ease,background .25s ease}
 .anchor-wayfinding:hover{transform:translateY(-3px);background:#16130d;color:var(--anchor-shell-gold)}
 .anchor-wayfinding__sigil{display:grid;place-items:center;width:27px;height:27px;border-radius:50%;background:var(--anchor-shell-gold);color:#16120a;font:600 15px/1 var(--serif,'Cinzel',serif)}
@@ -64,6 +64,48 @@ body.has-anchor-shell>header:not(.anchor-shell){display:none}
 .article-list b,.episode-columns li>b,.case-tags,.filters span,.ai-disciplines span,.process-sequence span,.ecosystem-node span{font-size:11px!important;font-weight:800}
 .anchor-film-audio button{font-size:11px}.anchor-film-audio small{font-size:11px;color:#ead7af}
 @media(max-width:760px){.anchor-shell-managed .anchor-nav a,.anchor-shell .anchor-nav a{font-size:12px}.studio-page p:not(.studio-eyebrow),.service p,.service-card p,.service-copy p,.work-page .case-copy>p:not(.eyebrow),.notes-page .article-list p,.podcast-page .episode-columns p,.ai-tools-page .ai-disciplines ul,.ecosystem-node p,.process-panel p,.aurelius-message,.project-form p{font-size:16px!important;line-height:1.68}.studio-page .studio-text-link,.notes-page .article-list a,.podcast-page .episode-columns a,.ecosystem-node a,.process-panel a{font-size:13px!important}}
+
+/* Cohesion audit 2026-08: one shell geometry, one viewport contract. */
+@media(min-width:1181px){
+  .anchor-shell{padding-left:36px;padding-right:36px}
+  .anchor-shell .anchor-nav{margin-left:16px}
+}
+html:has(.studio-page),.studio-page{height:100%;overflow:hidden}
+.studio-page.has-anchor-shell{padding-top:0}
+.studio-page .horizontal-scroll{height:100svh;max-height:100svh;overflow-y:hidden}
+.studio-page .scroll-wrapper{height:100svh}
+.studio-page .scroll-section{box-sizing:border-box;min-width:100vw;width:100vw;max-height:100svh;overflow:hidden}
+
+/* Work frames must never shrink into, or visually collide with, their neighbors. */
+.horizontal-journey:has(.work-hero) main>.panel,
+.horizontal-journey:has(.work-hero) main>article{flex:0 0 100vw!important;min-width:100vw!important;width:100vw!important;max-width:100vw!important;contain:layout paint}
+
+/* Conversion routes retain a full-view composition at executive desktop sizes. */
+@media(min-width:1001px) and (min-height:720px){
+  html:has(.schedule-page),.schedule-page{height:100%;overflow:hidden}
+  .schedule-page main{height:100svh;min-height:0;overflow:hidden}
+  .schedule-page .schedule-hero{height:calc(100svh - 68px);min-height:0;padding-top:clamp(24px,3.2vh,38px);padding-bottom:clamp(24px,3.2vh,38px)}
+  .schedule-page .schedule-copy h1{margin:16px 0 18px;font-size:clamp(54px,6.2vw,94px)}
+  .schedule-page .schedule-copy .lede{font-size:clamp(16px,1.15vw,19px);line-height:1.48}
+  .schedule-page .schedule-rules{margin-top:24px;gap:13px 24px}
+  .schedule-page .booking-form{padding:24px 28px}
+  .schedule-page .booking-form__heading{padding-bottom:13px;margin-bottom:12px}
+  .schedule-page .booking-grid{gap:10px 14px}
+  .schedule-page .booking-form input,.schedule-page .booking-form select{min-height:40px;margin-top:5px;padding:8px 10px}
+  .schedule-page .booking-form textarea{min-height:68px;margin-top:5px;padding:8px 10px;resize:none}
+  .schedule-page .form-status{margin-bottom:8px;min-height:14px}
+  .schedule-page .booking-submit{margin-top:14px;min-height:46px}
+  body:not([class]){height:100%;overflow:hidden}
+  body:not([class])>main{height:100svh;overflow:hidden}
+  body:not([class]) .brief{height:100svh;min-height:0;padding-top:104px;padding-bottom:28px;align-items:center}
+  body:not([class]) .brief-copy{position:static}
+  body:not([class]) .brief h1{font-size:clamp(52px,6.2vw,88px)}
+  body:not([class]) .brief-form{gap:14px 18px}
+  body:not([class]) .field{gap:5px}
+  body:not([class]) .field input,body:not([class]) .field select,body:not([class]) .field textarea{padding:8px 0}
+  body:not([class]) .field textarea{min-height:68px;resize:none}
+  body:not([class]) .aurelius-prompt{padding:12px 0}
+}
 
 .notes-page .article-list__title{color:#f4ecdc;text-decoration:none}.notes-page .article-list__title:hover{color:#e7bf78}.notes-page .article-list__continue{color:#e7bf78;font-size:12px!important;font-weight:800;text-decoration:none;white-space:nowrap}.notes-page .article-list__continue:hover{text-decoration:underline;text-underline-offset:4px}
 
