@@ -1,149 +1,306 @@
-/* Global styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 30px;
-}
+/* ==========================================================================
+   CONTACT FORM (site_form7) — Page-Specific Styles
+   Relies on anchor-system.css + anchor-core.css for shared tokens/layout
+   ========================================================================== */
 
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
-    overflow-y: auto; /* Enable vertical scrolling */
-    margin: 0;
-    
-}
-
-/* Header styles */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo svg {
-    width: 100px;
-}
-
-
-/* Main content styles */
 .main-content {
     display: flex;
     flex-direction: column;
-    padding: 20px; /* Padding around the content */
-    width: 100%; /* Full width */
-    box-sizing: border-box; /* Include padding in width calculation */
-    background-color: #111; /* Dark background for content */
+    padding: var(--space-6) var(--space-4) var(--space-16);
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-top: calc(var(--header-height) + var(--space-8));
 }
 
-/* Ensuring the scroll container starts below the header */
 .scroll-container {
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* Form styles */
+/* ---------- Progress Indicator ---------- */
+.form-progress {
+    width: 100%;
+    max-width: 600px;
+    height: 6px;
+    background: var(--bg-elevated);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: 0 auto var(--space-8);
+    border: 1px solid var(--border-subtle);
+}
+
+.form-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--gradient-primary);
+    border-radius: var(--radius-full);
+    transition: width var(--transition-default);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ---------- Form Intro ---------- */
+.form-intro {
+    text-align: center;
+    margin-bottom: var(--space-12);
+    padding: 0 var(--space-4);
+}
+
+.form-intro h1 {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-3);
+}
+
+.form-intro p {
+    color: var(--text-secondary);
+    font-size: var(--text-lg);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* ---------- Form Container ---------- */
 form {
-    background-color: #333; /* Dark background for form */
-    border: 1px solid #555;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 70px;
     display: flex;
     flex-direction: column;
     width: 100%;
-    
+    max-width: 700px;
+    margin: 0 auto;
     box-sizing: border-box;
-    overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
-/* Two-column layout for the form */
-.form-row {
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ---------- Glassmorphism Cards ---------- */
+.form-card {
+    border-radius: var(--radius-xl);
+    padding: var(--space-8);
+    margin-bottom: var(--space-6);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-default);
+}
+
+.form-card:hover {
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-lg);
+}
+
+.form-card-header {
     display: flex;
-    flex-wrap: wrap; /* Ensure items wrap within the row */
-    gap: 20px;
-    width: 50%;
-    margin: auto;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
+.form-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(99, 102, 241, 0.12);
+    border-radius: var(--radius-md);
+    color: var(--accent-primary);
+    flex-shrink: 0;
+}
+
+.form-card-header h2 {
+    font-size: var(--text-xl);
+    color: var(--text-primary);
+}
+
+/* ---------- Form Fields ---------- */
 .form-column {
-    flex: 1;
-    min-width: calc(50% - 20px); /* Two columns with space between */
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
 }
 
-/* Additional styles for form elements */
-.personal-info, .business-info, .additional-info {
+.field {
     display: flex;
     flex-direction: column;
 }
 
-label {
-    display: block;
-    margin: 10px 0 5px;
+.field-row {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
 }
 
+.field-row .field {
+    flex: 1;
+    min-width: 140px;
+}
+
+/* Override base input font-size for form context */
 input[type="text"],
 input[type="email"],
-select,
-textarea {
+input[type="tel"],
+input[type="file"],
+textarea,
+select {
     width: 100%;
-    padding: 4px 10px;
-    margin-bottom: 10px;
-    border: 1px solid #666;
-    border-radius: 4px;
-    background-color: #555;
-    color: #fff;
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: var(--text-base);
+    transition: all var(--transition-default);
+    outline: none;
 }
 
 textarea {
     resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
 }
 
-button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
+/* ---------- Validation States ---------- */
+input.valid,
+select.valid,
+textarea.valid {
+    border-color: var(--accent-success);
+    background: rgba(16, 185, 129, 0.05);
+}
+
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border-color: var(--accent-error);
+    background: rgba(239, 68, 68, 0.05);
+    animation: shake 0.4s var(--ease-in-out);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-6px); }
+    75% { transform: translateX(6px); }
+}
+
+.error-msg {
+    display: block;
+    min-height: 1.2em;
+    margin-top: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--accent-error);
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all var(--transition-fast);
+}
+
+.error-msg.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Checkbox Field ---------- */
+.checkbox-field {
+    flex-direction: row !important;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.checkbox-field input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
     cursor: pointer;
-    align-self: center;
-    
 }
 
-button:hover {
-    background-color: #0056b3;
+.checkbox-label {
+    margin-bottom: 0;
+    cursor: pointer;
+    color: var(--text-secondary);
+    font-size: var(--text-sm);
 }
 
-/* Contact Form submit button centerd */
-.center{
+/* ---------- Submit Area ---------- */
+.form-submit-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.form-submit-btn {
+    min-width: 240px;
+    position: relative;
+}
+
+.form-submit-btn.loading .btn-text {
+    opacity: 0;
+}
+
+.form-submit-btn.loading .btn-spinner {
+    display: block;
+}
+
+.btn-spinner {
+    display: none;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: var(--radius-full);
+    animation: spin 0.7s linear infinite;
+}
+
+.form-submit-btn.success {
+    background: var(--accent-success);
+}
+
+/* ---------- Feedback Messages ---------- */
+.form-feedback {
     text-align: center;
-    margin: auto;
-    width: 50%;
-    margin-top: 15px;
+    font-size: var(--text-sm);
+    font-weight: var(--weight-medium);
+    min-height: 1.5em;
 }
 
-/* Responsive styles */
+.form-feedback.success {
+    color: var(--accent-success);
+}
+
+.form-feedback.error {
+    color: var(--accent-error);
+}
+
+/* ---------- Responsive ---------- */
 @media (max-width: 768px) {
-    .form-column {
-        min-width: 100%; /* Stack columns on small screens */
+    .form-card {
+        padding: var(--space-5);
+    }
+
+    .field-row {
+        flex-direction: column;
+    }
+
+    .field-row .field {
+        min-width: 100%;
+    }
+
+    .form-intro h1 {
+        font-size: var(--text-3xl);
     }
 }
 
 @media (max-width: 480px) {
-    .scroll-container {
-        padding: 10px;
+    .main-content {
+        padding: calc(var(--header-height) + var(--space-4)) var(--space-2) var(--space-12);
+    }
+
+    .form-card {
+        padding: var(--space-4);
     }
 }

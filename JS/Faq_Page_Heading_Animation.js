@@ -1,94 +1,98 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const faqQuestions = document.querySelectorAll('.faq-question');
+/* ==========================================================================
+   FAQ PAGE — Page-Specific JavaScript
+   (Mobile nav, scroll reveal, page transitions in JS/anchor-core.js)
+   ========================================================================== */
 
-  faqQuestions.forEach(question => {
-      question.addEventListener('click', () => {
-          const answer = question.nextElementSibling;
+(function () {
+    'use strict';
 
-          // Toggle the display of the answer
-          if (answer.style.display === 'block') {
-              answer.style.display = 'none';
-          } else {
-              answer.style.display = 'block';
-          }
-      });
-  });
-});
+    /* ---------- ACCORDION: SMOOTH EXPAND/COLLAPSE ---------- */
+    function initAccordion() {
+        var questions = document.querySelectorAll('.faq-question');
 
-function toggleMenu() {
-  const menu = document.querySelector('.nav-links');
-  menu.classList.toggle('show');
-}
+        questions.forEach(function (question) {
+            question.addEventListener('click', function () {
+                var item = question.closest('.faq-item');
+                var answerId = question.getAttribute('aria-controls');
+                var answer = document.getElementById(answerId);
+                var isActive = item.classList.contains('active');
 
+                // Close all other items (single-open accordion)
+                document.querySelectorAll('.faq-item.active').forEach(function (activeItem) {
+                    if (activeItem !== item) {
+                        activeItem.classList.remove('active');
+                        var activeBtn = activeItem.querySelector('.faq-question');
+                        if (activeBtn) activeBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
 
+                // Toggle current item
+                if (isActive) {
+                    item.classList.remove('active');
+                    question.setAttribute('aria-expanded', 'false');
+                } else {
+                    item.classList.add('active');
+                    question.setAttribute('aria-expanded', 'true');
+                }
+            });
 
-document.addEventListener('DOMContentLoaded', function() {
-  const navLinks = document.querySelectorAll('nav a');
+            // Keyboard support
+            question.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    question.click();
+                }
+            });
+        });
+    }
 
-  navLinks.forEach(link => {
-      link.addEventListener('click', function(event) {
-          // Check if the current document is index.html
-          const isBlogPageLink = targetHref.endsWith('Blog_Page_Heading_Animation.html');
-          const isFAQPageLink = targetHref.endsWith('faq_page_heading_animations.html');
+    /* ---------- SEARCH / FILTER ---------- */
+    function initSearch() {
+        var searchInput = document.getElementById('faq-search');
+        var noResults = document.getElementById('faq-no-results');
+        if (!searchInput) return;
 
-          if (isBlogPageLink) {
-              // Allow default behavior if the link is pointing to Blog_Page_Heading_Animation.html
-              return;
-          }
-          
-          if (isFAQPageLink) {
-              // Allow default behavior if the link is pointing to Blog_Page_Heading_Animation.html
-              return;
-          }
+        searchInput.addEventListener('input', function () {
+            var query = searchInput.value.toLowerCase().trim();
+            var items = document.querySelectorAll('.faq-item');
+            var visibleCount = 0;
 
+            items.forEach(function (item) {
+                var questionText = item.querySelector('.faq-question-text');
+                var answerText = item.querySelector('.faq-answer p');
+                var searchText = '';
 
-          if (window.location.pathname.endsWith('index.html')) {
-              // Prevent default behavior if the current document is index.html
-              event.preventDefault();
-              
-              // Extract the target ID from the href attribute
-              const targetId = this.getAttribute('href').substring(1);
-              const targetSection = document.getElementById(targetId);
-  
-              // Smooth scroll to the target section if it exists
-              if (targetSection) {
-                  targetSection.scrollIntoView({ behavior: 'smooth' });
-              }
-          } else {
-              // If not index.html, do not prevent the default behavior
-              // This allows the browser to handle the navigation
-          }
-      });
-  });
-  
+                if (questionText) searchText += questionText.textContent.toLowerCase();
+                if (answerText) searchText += ' ' + answerText.textContent.toLowerCase();
 
-  const contactLink = document.querySelector('nav a[href="#section4"]');
+                if (query === '' || searchText.indexOf(query) !== -1) {
+                    item.style.display = '';
+                    visibleCount++;
+                } else {
+                    item.style.display = 'none';
+                    // Close if it was open
+                    item.classList.remove('active');
+                    var btn = item.querySelector('.faq-question');
+                    if (btn) btn.setAttribute('aria-expanded', 'false');
+                }
+            });
 
-  //contactLink.addEventListener('click', function(event) {
-  //    event.preventDefault();
-  //    window.location.href = 'mailto:contact@AnchorWebDesigns.com?subject=Hi I am contacting you from AnchorWebDesigns.com about services';
-  //});
+            // Show/hide no-results message
+            if (noResults) {
+                noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            }
+        });
+    }
 
-  // Add horizontal scrolling with mouse wheel
-  const horizontalScroll = document.querySelector('.horizontal-scroll');
-  horizontalScroll.addEventListener('wheel', function(event) {
-      if (event.deltaY !== 0) {
-          event.preventDefault();
-          this.scrollBy({
-              left: event.deltaY < 0 ? -window.innerWidth : window.innerWidth,
-              behavior: 'smooth'
-          });
-      }
-  });
+    /* ---------- INIT ---------- */
+    function init() {
+        initAccordion();
+        initSearch();
+    }
 
-  // Arrow click navigation
-  document.querySelectorAll('.round').forEach(arrow => {
-      arrow.addEventListener('click', function() {
-          const direction = this.classList.contains('back') ? -1 : 1;
-          horizontalScroll.scrollBy({
-              left: direction * window.innerWidth,
-              behavior: 'smooth'
-          });
-      });
-  });
-});
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();

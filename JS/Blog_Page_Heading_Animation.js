@@ -1,121 +1,108 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const blogEntriesContainer = document.getElementById('blog-entries');
+/* ==========================================================================
+   BLOG PAGE — Page-Specific JavaScript
+   (Mobile nav, scroll reveal, page transitions in JS/anchor-core.js)
+   ========================================================================== */
 
-  // Example blog entries
-  const blogEntries = [
-      {
-          title: 'Our Latest Web Design Trends',
-          author: 'Jane Doe',
-          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum.',
-          imageUrl: 'https://via.placeholder.com/400',
-          date: 'August 25, 2024'
-      },
-      {
-          title: 'How to Improve Your Website’s UX',
-          author: 'John Smith',
-          content: 'Nullam vehicula, urna sit amet volutpat dignissim, elit mauris blandit sapien, eu suscipit justo est sed ligula.',
-          imageUrl: 'https://via.placeholder.com/400',
-          date: 'August 20, 2024'
-      }
-  ];
+(function () {
+    'use strict';
 
-  function renderEntries() {
-      blogEntriesContainer.innerHTML = ''; // Clear existing entries
+    /* ---------- BLOG ENTRIES DATA ----------
+       Uses local images from the IMG/ folder instead of external placeholder.com
+    */
+    var blogEntries = [
+        {
+            title: 'Our Latest Web Design Trends',
+            author: 'Jane Doe',
+            content: 'Stay ahead of the curve with the latest web design trends. From bold typography and immersive animations to dark mode aesthetics and glassmorphism, discover what makes a modern website stand out in 2024.',
+            imageUrl: 'IMG/24.png',
+            date: 'August 25, 2024',
+            readTime: '5 min read'
+        },
+        {
+            title: 'How to Improve Your Website\'s UX',
+            author: 'John Smith',
+            content: 'User experience is the foundation of every great website. Learn practical strategies for improving navigation, reducing friction, optimizing page load speeds, and designing intuitive interfaces that keep visitors engaged.',
+            imageUrl: 'IMG/25.png',
+            date: 'August 20, 2024',
+            readTime: '7 min read'
+        },
+        {
+            title: 'The Power of Responsive Design',
+            author: 'Sarah Johnson',
+            content: 'Responsive design is no longer optional — it is essential. Explore how mobile-first thinking, fluid grids, and flexible images create seamless experiences across every device, from phones to desktops.',
+            imageUrl: 'IMG/27.png',
+            date: 'August 15, 2024',
+            readTime: '6 min read'
+        },
+        {
+            title: 'Building Brands with Custom Logos',
+            author: 'Mike Chen',
+            content: 'A logo is more than a symbol — it is the visual cornerstone of your brand identity. Discover our process for crafting memorable logos that capture a company\'s essence and resonate with their audience.',
+            imageUrl: 'IMG/28.png',
+            date: 'August 10, 2024',
+            readTime: '4 min read'
+        }
+    ];
 
-      blogEntries.forEach(entry => {
-          const entryElement = document.createElement('div');
-          entryElement.className = 'blog-entry';
-          entryElement.innerHTML = `
-              <h2 class="entry-title">${entry.title}</h2>
-              <p class="entry-author">By ${entry.author}</p>
-              <div class="entry-content">
-                  <div class="image">
-                      <img src="${entry.imageUrl}" alt="Blog Image">
-                  </div>
-                  <div class="text">
-                      <p>${entry.content}</p>
-                  </div>
-              </div>
-              <p class="entry-date">${entry.date}</p>
-          `;
-          blogEntriesContainer.appendChild(entryElement);
-      });
-  }
+    /* ---------- RENDER BLOG ENTRIES ---------- */
+    function renderEntries() {
+        var container = document.getElementById('blog-entries');
+        if (!container) return;
 
-  // Initial render
-  renderEntries();
-});
+        container.innerHTML = blogEntries.map(function (entry, index) {
+            return '' +
+                '<article class="blog-entry reveal" data-delay="' + ((index % 4) + 1) + '">' +
+                    '<div class="entry-image-wrapper">' +
+                        '<img src="' + entry.imageUrl + '" alt="' + entry.title + '" loading="lazy">' +
+                    '</div>' +
+                    '<div class="entry-body">' +
+                        '<h2 class="entry-title">' + entry.title + '</h2>' +
+                        '<div class="entry-meta">' +
+                            '<span class="entry-author">By ' + entry.author + '</span>' +
+                            '<span class="meta-dot"></span>' +
+                            '<span class="entry-read-time">' + entry.readTime + '</span>' +
+                        '</div>' +
+                        '<div class="entry-content">' +
+                            '<p>' + entry.content + '</p>' +
+                        '</div>' +
+                        '<div class="entry-footer">' +
+                            '<span class="entry-date">' + entry.date + '</span>' +
+                            '<span class="entry-read-more">Read more →</span>' +
+                        '</div>' +
+                    '</div>' +
+                '</article>';
+        }).join('');
 
+        // Re-initialize scroll reveal for newly added elements
+        if (window.IntersectionObserver) {
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('active');
+                        observer.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('nav a');
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            // Check if the current document is index.html
-            const isBlogPageLink = targetHref.endsWith('Blog_Page_Heading_Animation.html');
-            const isFAQPageLink = targetHref.endsWith('faq_page_heading_animations.html');
-
-            if (isBlogPageLink) {
-                // Allow default behavior if the link is pointing to Blog_Page_Heading_Animation.html
-                return;
-            }
-            
-            if (isFAQPageLink) {
-                // Allow default behavior if the link is pointing to Blog_Page_Heading_Animation.html
-                return;
-            }
-
-
-            if (window.location.pathname.endsWith('index.html')) {
-                // Prevent default behavior if the current document is index.html
-                event.preventDefault();
-                
-                // Extract the target ID from the href attribute
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-    
-                // Smooth scroll to the target section if it exists
-                if (targetSection) {
-                    targetSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            } else {
-                // If not index.html, do not prevent the default behavior
-                // This allows the browser to handle the navigation
-            }
-        });
-    });
-    
-
-    const contactLink = document.querySelector('nav a[href="#section4"]');
-
-    //contactLink.addEventListener('click', function(event) {
-    //    event.preventDefault();
-    //    window.location.href = 'mailto:contact@AnchorWebDesigns.com?subject=Hi I am contacting you from AnchorWebDesigns.com about services';
-    //});
-
-    // Add horizontal scrolling with mouse wheel
-    const horizontalScroll = document.querySelector('.horizontal-scroll');
-    horizontalScroll.addEventListener('wheel', function(event) {
-        if (event.deltaY !== 0) {
-            event.preventDefault();
-            this.scrollBy({
-                left: event.deltaY < 0 ? -window.innerWidth : window.innerWidth,
-                behavior: 'smooth'
+            container.querySelectorAll('.reveal:not(.active)').forEach(function (el) {
+                observer.observe(el);
+            });
+        } else {
+            // Fallback: show all
+            container.querySelectorAll('.reveal').forEach(function (el) {
+                el.classList.add('active');
             });
         }
-    });
+    }
 
-    // Arrow click navigation
-    document.querySelectorAll('.round').forEach(arrow => {
-        arrow.addEventListener('click', function() {
-            const direction = this.classList.contains('back') ? -1 : 1;
-            horizontalScroll.scrollBy({
-                left: direction * window.innerWidth,
-                behavior: 'smooth'
-            });
-        });
-    });
-});
+    /* ---------- INIT ---------- */
+    function init() {
+        renderEntries();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+})();

@@ -4,75 +4,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
+    <title>About Us | Anchor Web Design Studios</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Meet the team behind Anchor Web Design Studios. We are a dynamic collective of developers and designers crafting modern, responsive websites that drive measurable results for growing businesses.">
+    <meta name="keywords" content="web design studio, about us, web developers, UI/UX designers, Anchor Web Design, digital agency team">
+    <meta name="author" content="Anchor Web Design Studios">
+    <link rel="canonical" href="https://anchorwebdesigns.com/About_Us.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="About Us | Anchor Web Design Studios">
+    <meta property="og:description" content="Meet the team behind Anchor Web Design Studios — a collective of developers and designers crafting modern, responsive websites that drive results.">
+    <meta property="og:url" content="https://anchorwebdesigns.com/About_Us.html">
+    <meta property="og:image" content="IMG/team_1.png">
+    <meta property="og:site_name" content="Anchor Web Design Studios">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Us | Anchor Web Design Studios">
+    <meta name="twitter:description" content="Meet the team behind Anchor Web Design Studios — a collective of developers and designers crafting modern, responsive websites that drive results.">
+    <meta name="twitter:image" content="IMG/team_1.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Design System + Core CSS -->
+    <link rel="stylesheet" href="CSS/anchor-system.css">
+    <link rel="stylesheet" href="CSS/anchor-core.css">
+    <!-- Page CSS -->
     <link rel="stylesheet" href="CSS/About_Us.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "About Anchor Web Design Studios",
+      "url": "https://anchorwebdesigns.com/About_Us.html",
+      "description": "Meet the team behind Anchor Web Design Studios — a collective of developers and designers crafting modern, responsive websites that drive results.",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Anchor Web Design Studios",
+        "url": "https://anchorwebdesigns.com",
+        "logo": "https://anchorwebdesigns.com/IMG/Black__White_Minimalist_Business_Logo.png",
+        "description": "Anchor Web Design Studios helps businesses grow by creating modern, responsive websites that look great and drive measurable results.",
+        "member": [
+          {
+            "@type": "Person",
+            "name": "Jayla",
+            "jobTitle": "Web Developer",
+            "url": "https://anchorwebdesigns.com/jayla.html",
+            "description": "Skilled web developer with a passion for creating innovative digital solutions."
+          },
+          {
+            "@type": "Person",
+            "name": "Ervin",
+            "jobTitle": "Designer",
+            "url": "https://anchorwebdesigns.com/ervin.html",
+            "description": "Talented designer crafting visually stunning and user-friendly interfaces."
+          }
+        ]
+      }
+    }
+    </script>
 </head>
 
 <body>
-    <header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="anchor-header">
         <div id="logo" class="logo">
             <div class="patterns">
-                <a href="page_headings_animation_template.html?target=index.html"><svg width="100" height="50">
-                    <defs>
-                        <pattern id="polka-dots" x="10" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
-                            <circle fill="#ffffff" cx="25" cy="25" r="3"></circle>
-                        </pattern>
-                        <style>
-                            @import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
-                        </style>
-                    </defs>
-                    <rect x="0" y="0" width="100%" height="100%" fill="black"></rect>
-                    <text x="50%" y="60%" text-anchor="middle" fill="white">&lt;a&gt;</text>
-                </svg></a>
+                <a href="page_headings_animation_template.html?target=index.html" aria-label="Anchor Web Design home">
+                    <svg width="100" height="50" role="img" aria-label="Anchor Web Design logo">
+                        <defs>
+                            <pattern id="polka-dots" x="10" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                                <circle fill="#ffffff" cx="25" cy="25" r="3"></circle>
+                            </pattern>
+                        </defs>
+                        <rect x="0" y="0" width="100%" height="100%" fill="black"></rect>
+                        <text x="50%" y="60%" text-anchor="middle" fill="white">&lt;a&gt;</text>
+                    </svg>
+                </a>
             </div>
         </div>
-        <nav>
+        <nav class="anchor-nav" aria-label="Primary navigation">
             <div class="hamburger-menu">
-                <div class="hamburger-icon" onclick="toggleMenu()">☰</div>
-              </div>
+                <button class="hamburger-icon" aria-label="Toggle navigation menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
             <ul class="nav-links">
                 <li><a href="Faq_Page_Heading_Animation.html">FAQ</a></li>
                 <li><a href="Blog_Page_Heading_Animation.html">Blog</a></li>
                 <li><a href="index.html#section5">Portfolio</a></li>
                 <li><a href="index.html#section4">Contact Us</a></li>
-                <li><a href="index.html#section3">About Us</a></li>
-                <li><a href="index.html#section2">Services</a></li>
-                
+                <li><a href="About_Us.html" aria-current="page">About Us</a></li>
+                <li><a href="Services.html">Services</a></li>
             </ul>
         </nav>
     </header>
 
+    <main id="main-content">
     <div class="horizontal-scroll">
         <div class="scroll-wrapper">
-            <section id="section1" class="scroll-section">
-                <h1 id="about2-heading"></h1>
-            
-            <div class="right-con">
-                <div class="round">
-                    <div id="cta">
-                        <div class="arrow primera next"></div>
-                        <div class="arrow segunda next"></div>
+            <section id="section1" class="scroll-section" aria-label="About heading">
+                <h1 id="about2-heading" class="sr-only">About Us</h1>
+                <div class="right-con">
+                    <div class="round">
+                        <div id="cta" role="button" tabindex="0" aria-label="Go to next section">
+                            <div class="arrow primera next"></div>
+                            <div class="arrow segunda next"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
             </section>
-            <section id="section2" class="scroll-section contact">
-                <div class="flip-container">
+            <section id="section2" class="scroll-section contact" aria-label="Our mission">
+                <div class="flip-container reveal-scale">
                     <div class="flip-card">
                         <div class="flip-card-inner">
-                        <div class="flip-card-front" style="flex: 5;">
-                            <img src="IMG/Black__White_Minimalist_Business_Logo.png" alt="Section 4 Image">
+                        <div class="flip-card-front">
+                            <img src="IMG/Black__White_Minimalist_Business_Logo.png" alt="Anchor Web Design Studios logo">
                         </div>
-                        <div class="flip-card-back" style="flex: 5;">
-                            <h1>About Us </h1>
-                            <p>Welcome to Anchor Web Designs.Our mission is to help businesses grow by creating websites that not only look great but also drive results.</p>
+                        <div class="flip-card-back">
+                            <h2>About Us</h2>
+                            <p>Welcome to Anchor Web Design Studios. Our mission is to help businesses grow by creating websites that not only look exceptional but also drive measurable results — combining thoughtful design, clean code, and a relentless focus on the people who use what we build.</p>
                         </div>
                         </div>
                     </div>
-                </div> 
+                </div>
                 <div class="left-con">
                     <div class="round">
-                        <div id="cta">
+                        <div id="cta" role="button" tabindex="0" aria-label="Go to previous section">
                             <div class="arrow primera previous"></div>
                             <div class="arrow segunda previous"></div>
                         </div>
@@ -81,124 +145,122 @@
 
                 <div class="right-con">
                     <div class="round">
-                        <div id="cta">
+                        <div id="cta" role="button" tabindex="0" aria-label="Go to next section">
                             <div class="arrow primera next"></div>
                             <div class="arrow segunda next"></div>
                         </div>
                     </div>
                 </div>
-                    
             </section>
-            <section id="section3" class="scroll-section contact">
-                <div class="flip-container">
+            <section id="section3" class="scroll-section contact" aria-label="Meet Jayla">
+                <div class="flip-container reveal-scale">
                     <div class="flip-card">
                         <div class="flip-card-inner">
-                        <div class="flip-card-front" style="flex: 2;">
-                            <img src="IMG/jayla_1.png" alt="Section 4 Image">
+                        <div class="flip-card-front">
+                            <img src="IMG/jayla_1.png" alt="Portrait of Jayla, web developer at Anchor Web Design Studios">
                         </div>
-                        <div class="flip-card-back" style="flex: 3;">
-                            <p>Jayla is a skilled web developer with a passion for creating innovative digital solutions. From coding to design, she excels at bringing ideas to life. Learn more about her achievements <a href="jayla.html">here.</a>
-</p>
+                        <div class="flip-card-back">
+                            <p>Jayla is a skilled web developer with a passion for creating innovative digital solutions. From writing clean, maintainable code to shaping intuitive interfaces, she excels at bringing ideas to life. Learn more about her achievements <a href="jayla.html">on her profile page</a>.</p>
                         </div>
                     </div>
                 </div>
-            </div> 
-            <div>
-                <h1>Meet Jayla</h1>
-            </div>
-            <div class="left-con">
-                <div class="round">
-                    <div id="cta">
-                        <div class="arrow primera previous"></div>
-                        <div class="arrow segunda previous"></div>
+                </div>
+                <div>
+                    <h2>Meet Jayla</h2>
+                </div>
+                <div class="left-con">
+                    <div class="round">
+                        <div id="cta" role="button" tabindex="0" aria-label="Go to previous section">
+                            <div class="arrow primera previous"></div>
+                            <div class="arrow segunda previous"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="right-con">
-                <div class="round">
-                    <div id="cta">
-                        <div class="arrow primera next"></div>
-                        <div class="arrow segunda next"></div>
+                <div class="right-con">
+                    <div class="round">
+                        <div id="cta" role="button" tabindex="0" aria-label="Go to next section">
+                            <div class="arrow primera next"></div>
+                            <div class="arrow segunda next"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
             </section>
-            <section id="section4" class="scroll-section contact">
-                <div class="flip-container">
+            <section id="section4" class="scroll-section contact" aria-label="Meet Ervin">
+                <div class="flip-container reveal-scale">
                     <div class="flip-card">
                         <div class="flip-card-inner">
-                        <div class="flip-card-front" style="flex: 2;">
-                            <img src="IMG/ervin_1.png" alt="Section 4 Image">
+                        <div class="flip-card-front">
+                            <img src="IMG/ervin_1.png" alt="Portrait of Ervin, designer at Anchor Web Design Studios">
                         </div>
-                        <div class="flip-card-back" style="flex: 3;">
-                            <p>Ervin is a talented designer with a knack for crafting visually stunning and user-friendly interfaces. Discover more about Ervin's unique approach and portfolio <a href="ervin.html">here.</a> </p>
+                        <div class="flip-card-back">
+                            <p>Ervin is a talented designer with a knack for crafting visually stunning and user-friendly interfaces. Discover more about Ervin's unique approach and portfolio <a href="ervin.html">on his profile page</a>.</p>
                         </div>
                     </div>
                 </div>
-            </div> 
-            <div>
-                <h1>Meet Ervin</h1>
-            </div>
-            <div class="left-con">
-                <div class="round">
-                    <div id="cta">
-                        <div class="arrow primera previous"></div>
-                        <div class="arrow segunda previous"></div>
+                </div>
+                <div>
+                    <h2>Meet Ervin</h2>
+                </div>
+                <div class="left-con">
+                    <div class="round">
+                        <div id="cta" role="button" tabindex="0" aria-label="Go to previous section">
+                            <div class="arrow primera previous"></div>
+                            <div class="arrow segunda previous"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="right-con">
-                <div class="round">
-                    <div id="cta">
-                        <div class="arrow primera next"></div>
-                        <div class="arrow segunda next"></div>
+                <div class="right-con">
+                    <div class="round">
+                        <div id="cta" role="button" tabindex="0" aria-label="Go to next section">
+                            <div class="arrow primera next"></div>
+                            <div class="arrow segunda next"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
             </section>
-            <section id="section5" class="scroll-section contact">
-                <div class="flip-container">
+            <section id="section5" class="scroll-section contact" aria-label="Meet the Team">
+                <div class="flip-container reveal-scale">
                     <div class="flip-card">
                         <div class="flip-card-inner">
-                        <div class="flip-card-front" style="flex: 2;">
-                            <img src="IMG/team_1.png" alt="Section 4 Image">
+                        <div class="flip-card-front">
+                            <img src="IMG/team_1.png" alt="The Anchor Web Design Studios team">
                         </div>
-                        <div class="flip-card-back" style="flex: 3;">
-                            <p>Our team is a dynamic group of creative professionals dedicated to delivering exceptional results. With diverse skills and a shared passion for innovation, we collaborate to bring your vision to life. <a href="team.html">Team.</a></p>
+                        <div class="flip-card-back">
+                            <p>Our team is a dynamic group of creative professionals dedicated to delivering exceptional results. With diverse skills and a shared passion for innovation, we collaborate to bring your vision to life. Meet the full <a href="team.html">team here</a>.</p>
                         </div>
                     </div>
                 </div>
-            </div> 
-            <div>
-                <h1>Meet the Team</h1>
-            </div>
-            <div class="left-con">
-                <div class="round">
-                    <div id="cta">
-                        <div class="arrow primera previous"></div>
-                        <div class="arrow segunda previous"></div>
+                </div>
+                <div>
+                    <h2>Meet the Team</h2>
+                </div>
+                <div class="left-con">
+                    <div class="round">
+                        <div id="cta" role="button" tabindex="0" aria-label="Go to previous section">
+                            <div class="arrow primera previous"></div>
+                            <div class="arrow segunda previous"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="right-con">
-                <div class="round">
-                    <div id="cta">
-                        <div class="arrow primera next"></div>
-                        <div class="arrow segunda next"></div>
+                <div class="right-con">
+                    <div class="round">
+                        <div id="cta" role="button" tabindex="0" aria-label="Go to next section">
+                            <div class="arrow primera next"></div>
+                            <div class="arrow segunda next"></div>
+                        </div>
                     </div>
                 </div>
-            </div>
             </section>
-            <section id="section6" class="scroll-section">
+            <section id="section6" class="scroll-section" aria-label="Contact us">
                 <div class="content">
                     <a href="site_form7.html"><h1 id="contact2-heading">Contact Us</h1></a>
                 </div>
                 <div class="left-con">
                     <div class="round">
-                        <div id="cta8">
+                        <div id="cta8" role="button" tabindex="0" aria-label="Go to previous section">
                             <div class="arrow primera previous"></div>
                             <div class="arrow segunda previous"></div>
                         </div>
@@ -207,7 +269,54 @@
             </section>
         </div>
     </div>
+    </main>
 
+    <footer class="anchor-footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>&lt;a&gt; Anchor Web Design</h3>
+                <p>Crafting modern, responsive websites that help businesses grow. Design, development, and digital strategy under one roof.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                    <li><a href="Services.html">Services</a></li>
+                    <li><a href="Blog_Page_Heading_Animation.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="Services.html">Web Design</a></li>
+                    <li><a href="Services.html">Digital Marketing</a></li>
+                    <li><a href="Services.html">Branding &amp; Logo</a></li>
+                    <li><a href="Services.html">SEO &amp; SEM</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="site_form7.html">Contact</a></li>
+                    <li><a href="Faq_Page_Heading_Animation.html">FAQ</a></li>
+                    <li><a href="index.html#section5">Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Anchor Web Design Studios. All rights reserved.</p>
+            <div class="footer-social">
+                <a href="#" aria-label="Twitter">TW</a>
+                <a href="#" aria-label="Instagram">IG</a>
+                <a href="#" aria-label="LinkedIn">LI</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core JS -->
+    <script src="JS/anchor-core.js"></script>
+    <!-- Page JS -->
     <script src="JS/about.js"></script>
 </body>
 
